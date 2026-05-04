@@ -15,8 +15,8 @@ from mhi.pscad.utilities.file import OutFile
 with open("config.yaml") as f:
     cfg = yaml.safe_load(f)
 
-X_R = cfg["X_R"]  # Grid X/R ratio
-SCR = cfg["SCR"]  # Short Circuit Ratio
+X_R = cfg["ac_grid"]["X_R"]  # Grid X/R ratio
+SCR = cfg["ac_grid"]["SCR"]  # Short Circuit Ratio
 STEP_UP_VOLTAGE = cfg["voltage_ref_step"]["step_up_voltage"]
 STEP_DOWN_VOLTAGE = cfg["voltage_ref_step"]["step_down_voltage"]
 
@@ -440,6 +440,13 @@ def connect_step_power_ref_model(proj_path: Path, proj_name: str, test: str,
     Returns:
         proj        : Configured PSCAD project object
         components  : Dictionary containing R and L component handles
+        :param step_down_P:
+        :param ref_power:
+        :param output_file_name:
+        :param test:
+        :param proj_name:
+        :param proj_path:
+        :param step_up_P:
         :param ramp_rate: Ramp rate of power
     """
 
