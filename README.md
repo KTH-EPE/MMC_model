@@ -1,6 +1,6 @@
 # PSCAD Automated Simulation Framework
 
-This repository provides an automated Python-based workflow for running and managing PSCAD simulations of MMC-based power electronic systems. The framework supports parameter sweeps, disturbance studies, and control strategy evaluations with systematic data export and post-processing.
+This repository provides an automated Python-based workflow for running and managing PSCAD simulations to assess the dynamic performance compliance of modular multi-level converters (MMCs) to the functional requirements stipulated in InterOPERA D2.1. The framework supports parameter sweeps with systematic data export and post-processing.
 
 ---
 
