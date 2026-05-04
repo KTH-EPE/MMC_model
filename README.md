@@ -152,7 +152,7 @@ Then install all dependencies:
 Activate the environment:
 
 `poetry shell`
----
+
 ---
 
 ## 8. Result analyses
