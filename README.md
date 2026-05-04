@@ -115,8 +115,8 @@ Separation of code and experiment setup
 
 ## 6. Core Workflow
 
+```text
 Each script follows the same structure:
-
 Step 1 — Connect to PSCAD
 Load project
 Set control mode
@@ -133,7 +133,7 @@ Rename and store systematically
 Step 5 — Parameter sweep (optional)
 Iterate over L, R, C combinations
 Store results in structured dataset
-
+```
 ---
 
 ## 7. Requirements & Installation
