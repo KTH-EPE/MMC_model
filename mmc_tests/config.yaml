@@ -1,0 +1,53 @@
+SCR: 10
+X_R: 20
+voltage_ref_step:
+  path: ../pscad_model/MMC_step_voltage_reference.pscx
+  name: MMC_step_voltage_reference
+  step_up_voltage: 652.8
+  step_down_voltage: 627.2
+  ref_power: 900
+  step_up_power: 900
+  step_down_power: 800
+  test: u_ref_step_up
+  output:
+    file_name: step_u_ref_response
+    result_file: ../pscad_model/MMC_step_voltage_reference.gf46/step_u_ref_response
+    directory: ../output/simulation_results/step_up_voltage_ref_response
+
+power_ref_step:
+  path: ../pscad_model/MMC_step_power_reference.pscx
+  name: MMC_step_power_reference
+  ref_power: -900
+  step_up_power: -800
+  step_down_power: -700
+  test: p_ref_step_up
+  ramp_rate: 500
+  output:
+    file_name: step_p_ref_response
+    result_file: ../pscad_model/MMC_step_power_reference.gf46/step_p_ref_response
+    directory: ../output/simulation_results/step_up_power_ref_response
+
+step_voltage_disturbance:
+  path: ../pscad_model/MMC_step_voltage_disturbance.pscx
+  name: MMC_step_voltage_disturbance
+  ref_power: 0
+  step_power: 200
+  test: u_step_up
+  step_up_voltage: 652.8
+  step_down_voltage: 627.2
+  output:
+    file_name: step_u_dist_response
+    result_file: ../pscad_model/MMC_step_voltage_disturbance.gf46/step_u_dist_response
+    directory: ../output/simulation_results/step_up_voltage_dist_response
+
+step_power_disturbance:
+  path: ../pscad_model/MMC_step_power_disturbance.pscx
+  name: MMC_step_power_disturbance
+  ref_power: 800
+  test: p_step_up
+  step_up_power: 900
+  step_down_power: 700
+  output:
+    file_name: step_p_disturance_response
+    result_file: ../pscad_model/MMC_step_power_disturbance.gf46/step_p_dist_response
+    directory: ../output/simulation_results/step_power_dist_response
