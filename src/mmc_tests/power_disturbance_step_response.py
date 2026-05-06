@@ -3,20 +3,22 @@ from methods import *
 # =========================
 # Load configuration file
 # =========================
-# Read experiment parameters for the voltage reference step study
+# Read experiment parameters for the active power disturbance study
 
 with open("config.yaml") as f:
     cfg = yaml.safe_load(f)
 
-# Extract configuration for the voltage reference step experiment
-PROJECT_PATH = Path(cfg["voltage_ref_step"]["path"])              # PSCAD project file path
-PROJECT_NAME = cfg["voltage_ref_step"]["name"]                    # Project name inside PSCAD
-OUTPUT_FILE_NAME = cfg["voltage_ref_step"]["output"]["file_name"] # Base name for PSCAD output file
-RESULT_FILE = Path(cfg["voltage_ref_step"]["output"]["result_file"])  # Temporary result file (.out)
-OUTPUT_DIR = Path(cfg["voltage_ref_step"]["output"]["directory"])     # Directory for storing processed results
+# Extract configuration for the power disturbance experiment
+PROJECT_PATH = Path(cfg["step_power_disturbance"]["path"])              # PSCAD project file path
+PROJECT_NAME = cfg["step_power_disturbance"]["name"]                    # Project name inside PSCAD
+OUTPUT_FILE_NAME = cfg["step_power_disturbance"]["output"]["file_name"]  # Base name for PSCAD output file
+RESULT_FILE = Path(f'{cfg["step_power_disturbance"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
+OUTPUT_DIR = Path(cfg["step_power_disturbance"]["output"]["directory"])     # Directory for storing processed results
 
-TEST = cfg["voltage_ref_step"]["test"]                            # Test type ("u_ref_step_up" or "u_ref_step_down")
-REF_POWER = cfg["voltage_ref_step"]["ref_power"]                  # Initial steady-state active power
+TEST = cfg["step_power_disturbance"]["test"]                            # Test type ("p_step_up" or "p_step_down")
+REF_POWER = cfg["step_power_disturbance"]["ref_power"]                  # Initial steady-state active power
+STEP_UP_POWER = cfg["step_power_disturbance"]["step_up_power"]          # Power after step-up disturbance
+STEP_DOWN_POWER = cfg["step_power_disturbance"]["step_down_power"]      # Power after step-down disturbance
 
 
 # =========================
@@ -32,13 +34,15 @@ def run_single_test():
         R = 6 Ohm
     """
 
-    # Connect to PSCAD model and configure voltage reference step test
-    proj, components = connect_step_voltage_ref_model(
+    # Connect to PSCAD model and configure power disturbance scenario
+    proj, components = connect_step_power_disturbance_model(
         proj_path=PROJECT_PATH,
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER
+        ref_power=REF_POWER,
+        step_up_P=STEP_UP_POWER,
+        step_down_P=STEP_DOWN_POWER
     )
 
     # Run simulation for a single RLC configuration
@@ -71,8 +75,7 @@ def generate_parameter_space():
     - Resistance is swept from 6 to 10 Ohm
     - Capacitance is swept from 500 to 2400 uF (step = 100 uF)
 
-    This parameter space represents variations in the DC-side equivalent
-    network influencing voltage control dynamics.
+    This parameter space represents variations in the DC-side equivalent network.
     """
     inductors = [i * 1e-3 for i in range(400, 901, 50)]  # Convert mH → H
     resistors = list(range(6, 11))                       # Integer Ohmic values
@@ -86,22 +89,24 @@ def generate_parameter_space():
 # =========================
 def run_parameter_sweep():
     """
-    Run a full RLC parameter sweep for the voltage reference step scenario.
+    Run a full RLC parameter sweep for the power disturbance scenario.
 
     Workflow:
-    1. Connect to PSCAD model and configure voltage reference step
+    1. Connect to PSCAD model and configure disturbance
     2. Generate parameter combinations (L, R, C)
     3. Run simulations for all combinations
     4. Save results with structured filenames
     """
 
     # Step 1: Connect to PSCAD and extract component handles
-    proj, components = connect_step_voltage_ref_model(
+    proj, components = connect_step_power_disturbance_model(
         proj_path=PROJECT_PATH,
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER
+        ref_power=REF_POWER,
+        step_up_P=STEP_UP_POWER,
+        step_down_P=STEP_DOWN_POWER
     )
 
     # Step 2: Generate sweep values

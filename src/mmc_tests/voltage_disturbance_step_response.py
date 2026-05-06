@@ -9,7 +9,7 @@ from methods import *
 PROJECT_PATH = Path(cfg["step_voltage_disturbance"]["path"])              # PSCAD project file path
 PROJECT_NAME = cfg["step_voltage_disturbance"]["name"]                    # Project name inside PSCAD
 OUTPUT_FILE_NAME = cfg["step_voltage_disturbance"]["output"]["file_name"] # Base name for PSCAD output file
-RESULT_FILE = Path(cfg["step_voltage_disturbance"]["output"]["result_file"])  # Temporary result file (.out)
+RESULT_FILE = Path(f'{cfg["step_voltage_disturbance"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["step_voltage_disturbance"]["output"]["directory"])     # Directory for storing processed results
 
 REF_POWER = cfg["step_voltage_disturbance"]["ref_power"]                  # Initial steady-state active power

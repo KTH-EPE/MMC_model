@@ -12,7 +12,7 @@ with open("config.yaml") as f:
 PROJECT_PATH = Path(cfg["power_ref_step"]["path"])              # PSCAD project file path
 PROJECT_NAME = cfg["power_ref_step"]["name"]                    # Project name inside PSCAD
 OUTPUT_FILE_NAME = cfg["power_ref_step"]["output"]["file_name"] # Base name for PSCAD output file
-RESULT_FILE = Path(cfg["power_ref_step"]["output"]["result_file"])  # Temporary result file (.out)
+RESULT_FILE = Path(f'{cfg["power_ref_step"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["power_ref_step"]["output"]["directory"])     # Directory for storing processed results
 REF_POWER = cfg["power_ref_step"]["ref_power"]                  # Initial steady-state active power
 STEP_UP_POWER = cfg["power_ref_step"]["step_up_power"]          # Power reference after step-up event
