@@ -26,9 +26,14 @@ The goal is to enable **reproducible, large-scale simulation studies** for HVDC 
 ```text
 MMC_model/
 │
-├── .venv/                          # Virtual environment (Poetry-managed)
+├── output/                        # All simulation outputs
 │
-├── mmc_tests/                     # Main simulation scripts
+├── pscad_model/                   # PSCAD project files
+│
+├── result_analysis/               # Post-processing & plotting scripts
+│
+│── src/                           # (Optional) reusable source modules
+│   mmc_tests/                     # Main simulation scripts
 │   ├── config.yaml                # Experiment configuration file
 │   ├── methods.py                 # Core PSCAD interface & utilities
 │   │
@@ -37,17 +42,9 @@ MMC_model/
 │   ├── voltage_disturbance_step_response.py
 │   └── voltage_reference_step_response.py
 │
-├── output/                        # All simulation outputs
-│
-├── pscad_model/                   # PSCAD project files
-│
-├── result_analysis/               # Post-processing & plotting scripts
-│
-└── src/                           # (Optional) reusable source modules
-    │
-    ├── poetry.lock                    # Locked dependencies (Poetry)
-    ├── pyproject.toml                 # Project configuration & dependencies
-    └── README.md                      # Project documentation
+├── poetry.lock                    # Locked dependencies (Poetry)
+├── pyproject.toml                 # Project configuration & dependencies
+└── README.md                      # Project documentation
 ```
 
 ---
@@ -115,25 +112,24 @@ Separation of code and experiment setup
 
 ## 6. Core Workflow
 
-```text
 Each script follows the same structure:
-Step 1 — Connect to PSCAD
-Load project
-Set control mode
-Configure grid impedance (SCR, X/R)
-Step 2 — Configure scenario
-Set reference values (power or voltage)
-Define disturbance type (step up/down)
-Step 3 — Run simulation
-Execute PSCAD simulation
-Export .out file
-Step 4 — Post-process
-Convert results to CSV
-Rename and store systematically
-Step 5 — Parameter sweep (optional)
-Iterate over L, R, C combinations
-Store results in structured dataset
-```
+- Step 1 — Connect to PSCAD
+  - Load project
+  - Set control mode
+  - Configure grid impedance (SCR, X/R)
+- Step 2 — Configure scenario
+  - Set reference values (power or voltage)
+  - Define disturbance type (step up/down)
+- Step 3 — Run simulation
+  - Execute PSCAD simulation
+  - Export .out file
+- Step 4 — Post-process
+  - Convert results to CSV
+  - Rename and store systematically
+- Step 5 — Parameter sweep (optional)
+  - Iterate over L, R, C combinations
+  - Store results in structured dataset
+
 ---
 
 ## 7. Requirements & Installation
