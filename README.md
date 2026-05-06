@@ -140,6 +140,13 @@ Store results in structured dataset
 ### 7.1 Python environment management (Poetry)
 
 This project uses Poetry for dependency management and environment isolation.
+Clone the project using
+
+`git clone <repo-url>`
+
+Change the directory to the "MMC_model"
+
+ `cd MMC_model`
 
 Install Poetry (if not already installed):
 
@@ -152,6 +159,8 @@ Then install all dependencies:
 Activate the environment:
 
 `poetry shell`
+
+Run the tests in "mmc_tests" as desired
 
 ---
 
