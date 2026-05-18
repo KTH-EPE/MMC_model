@@ -1,6 +1,6 @@
 ac_grid:
   SCR: 15
-  X_R: 20
+  X_R: 10
 voltage_ref_step:
   path: ../../pscad_model/MMC_step_voltage_reference.pscx
   name: MMC_step_voltage_reference
