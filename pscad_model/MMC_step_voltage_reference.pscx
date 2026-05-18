@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1777898351" />
+    <param name="revisor" value="geraldck, 1779114857" />
     <param name="fortran_version" value="$(DefaultCompilerKey)" />
     <param name="c_version" value="$(DefaultCKey)" />
     <param name="matlab_version" value="$(DefaultMatlabKey)" />
@@ -8388,8 +8388,8 @@
         <ref link="137886710" />
       </path>
       <paramlist>
-        <param name="xmin" value="2.1996996997" />
-        <param name="xmax" value="4.88738738739" />
+        <param name="xmin" value="2.83670156643" />
+        <param name="xmax" value="3.48261949501" />
       </paramlist>
     </Settings>
     <Settings classid="OverlayGraphSettings" id="1521178670" link="881792854">
@@ -8399,8 +8399,8 @@
         <ref link="137886710" />
       </path>
       <paramlist>
-        <param name="ymin" value="622.5" />
-        <param name="ymax" value="642.5" />
+        <param name="ymin" value="638.0" />
+        <param name="ymax" value="656.0" />
       </paramlist>
     </Settings>
     <Settings classid="GraphFrameSettings" id="695626579" link="991784323">
@@ -14582,22 +14582,6 @@
   <bookmarks />
   <GlobalSubstitutions name="Default">
     <List classid="Sub">
-      <Sub id="1076493198" classid="GlobalSubstitution">
-        <paramlist>
-          <param name="name" value="uref_step_up" />
-          <param name="value" value="652.8" />
-          <param name="group" value="" />
-          <param name="cat" value="" />
-        </paramlist>
-      </Sub>
-      <Sub id="466471103" classid="GlobalSubstitution">
-        <paramlist>
-          <param name="name" value="uref_step_down" />
-          <param name="value" value="627.2" />
-          <param name="group" value="" />
-          <param name="cat" value="" />
-        </paramlist>
-      </Sub>
       <Sub id="363787190" classid="GlobalSubstitution">
         <paramlist>
           <param name="name" value="uref" />
@@ -14610,14 +14594,6 @@
         <paramlist>
           <param name="name" value="Vg" />
           <param name="value" value="400" />
-          <param name="group" value="" />
-          <param name="cat" value="" />
-        </paramlist>
-      </Sub>
-      <Sub id="546617191" classid="GlobalSubstitution">
-        <paramlist>
-          <param name="name" value="Sn" />
-          <param name="value" value="1000" />
           <param name="group" value="" />
           <param name="cat" value="" />
         </paramlist>
@@ -14798,7 +14774,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="41105841" view="false" date="1777895700">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="92824378" view="false" date="1779114769">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -15009,7 +14985,7 @@
             <param name="Name" value="Idc" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="887450504" name="master:pgb" x="396" y="468" w="41" h="40" z="120" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="887450504" name="master:pgb" x="396" y="468" w="41" h="40" z="100" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="55341900">
             <param name="Name" value="Idc" />
             <param name="Group" value="" />
@@ -15113,18 +15089,18 @@
         </User>
         <User classid="UserCmp" defn="master:capacitor" id="1315654948" x="486" y="198" w="34" h="44" z="1" orient="1" link="-1" q="4" disable="false" name="" layer="">
           <paramlist link="-1" name="" crc="108275881">
-            <param name="C" value="600" />
+            <param name="C" value="750" />
             <param name="Name" value="C_dc" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:div" id="95293882" x="270" y="216" w="80" h="59" z="150" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:div" id="95293882" x="270" y="216" w="80" h="59" z="130" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="74852640">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:src_ccin_1" id="1215727512" x="414" y="216" w="54" h="44" z="180" orient="1" link="-1" layer="" q="4" disable="false">
+        <User classid="UserCmp" defn="master:src_ccin_1" id="1215727512" x="414" y="216" w="54" h="44" z="160" orient="1" link="-1" layer="" q="4" disable="false">
           <paramlist link="-1" name="" crc="48079029">
             <param name="Name" value="Source 1_1" />
             <param name="Cntrl" value="1" />
@@ -15170,29 +15146,29 @@
           <vertex x="0" y="54" />
           <vertex x="36" y="54" />
         </Wire>
-        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER102_1" id="171519397" x="972" y="216" w="278" h="167" z="170" orient="4" defn="MMC_step_voltage_reference:CONVERTER102_1" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER102_1" id="171519397" x="972" y="216" w="278" h="167" z="150" orient="4" defn="MMC_step_voltage_reference:CONVERTER102_1" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="4572592">
             <param name="Name" value="ALA MMC" />
             <param name="Vtr_1" value="400" />
             <param name="Vtr_2" value="360" />
             <param name="Vdc_ref" value="UC0" />
-            <param name="Sn" value="1000" />
-            <param name="Ceq" value="30.66" />
-            <param name="Nsm" value="350" />
-            <param name="Larm" value="0.0658" />
-            <param name="Rarm" value="0.08" />
+            <param name="Sn" value="1200" />
+            <param name="Ceq" value="100" />
+            <param name="Nsm" value="200" />
+            <param name="Larm" value="0.019" />
+            <param name="Rarm" value="0.181" />
             <param name="Xt" value="0.16" />
             <param name="fn" value="50" />
             <param name="TBL" value="111.00005" />
             <param name="Pn" value="1000" />
-            <param name="Qn" value="0" />
+            <param name="Qn" value="200" />
             <param name="PF" value="1" />
-            <param name="Pref" value="900" />
+            <param name="Pref" value="1000" />
             <param name="Qref" value="0" />
             <param name="idmode" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER253" id="13902648" x="1206" y="198" w="173" h="110" z="90" orient="4" defn="MMC_step_voltage_reference:CONVERTER253" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER253" id="13902648" x="1206" y="198" w="173" h="110" z="80" orient="4" defn="MMC_step_voltage_reference:CONVERTER253" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="4045761">
             <param name="Name" value="" />
             <param name="Vtrms" value="400" />
@@ -15200,8 +15176,8 @@
             <param name="fn" value="50" />
             <param name="SCR" value="10" />
             <param name="XR" value="10" />
-            <param name="Rg" value="0.8" />
-            <param name="Lg" value="0.050929581789406514" />
+            <param name="Rg" value="0.3" />
+            <param name="Lg" value="0.020929581789406514" />
             <param name="Vg" value="$(Vg)" />
           </paramlist>
           <paramlist link="991784323" name="">
@@ -15213,7 +15189,7 @@
             <param name="ymax" value="2" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:multimeter" id="67839992" x="1098" y="216" w="44" h="54" z="100" orient="0" defn="master:multimeter" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:multimeter" id="67839992" x="1098" y="216" w="44" h="54" z="90" orient="0" defn="master:multimeter" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="27440011">
             <param name="MeasV" value="1" />
             <param name="MeasI" value="1" />
@@ -15281,7 +15257,7 @@
           <vertex x="0" y="0" />
           <vertex x="0" y="-36" />
         </Wire>
-        <User classid="UserCmp" defn="master:hardlimit" id="1768078482" x="342" y="216" w="80" h="59" z="160" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:hardlimit" id="1768078482" x="342" y="216" w="80" h="59" z="140" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="16843219">
             <param name="UL" value="2" />
             <param name="LL" value="-2" />
@@ -15354,7 +15330,7 @@
             </Curve>
           </Graph>
         </Frame>
-        <User classid="UserCmp" id="1277339489" name="master:pgb" x="1080" y="486" w="41" h="40" z="130" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="1277339489" name="master:pgb" x="1080" y="486" w="41" h="40" z="110" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="55341900">
             <param name="Name" value="Pac" />
             <param name="Group" value="" />
@@ -15416,7 +15392,7 @@
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:select" defn="master:select" id="59864313" x="378" y="108" w="82" h="91" z="140" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:select" defn="master:select" id="59864313" x="378" y="108" w="82" h="91" z="120" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108938206">
             <param name="A" value="1" />
             <param name="DPath" value="1" />
@@ -15967,7 +15943,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="94670393" instances="0" key="" view="false" date="1777032301" id="1588736153">
+    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="94670393" instances="0" key="" view="false" date="1779091758" id="1588736153">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -17630,7 +17606,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1" group="" url="" version="" build="" crc="58214503" instances="0" key="" view="false" date="1777032297" id="1874356029">
+    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1" group="" url="" version="" build="" crc="52093687" instances="0" key="" view="false" date="1779113722" id="1874356029">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -18030,7 +18006,7 @@
             <param name="Display" value="1" />
             <param name="Max" value="1" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="0.05" />
+            <param name="Value" value="0.1" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -18062,7 +18038,7 @@
             <param name="Display" value="1" />
             <param name="Max" value="10" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="1.5" />
+            <param name="Value" value="2.5" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -18315,7 +18291,7 @@
           <paramlist link="-1" name="" crc="34173863">
             <param name="Dim" value="1" />
             <param name="COM" value="Gain" />
-            <param name="G" value="1.1" />
+            <param name="G" value="1.2" />
             <param name="Name" value="" />
             <param name="DPath" value="1" />
           </paramlist>
@@ -18632,7 +18608,7 @@
             <param name="MinOut" value="LimL" />
             <param name="Kp" value="VKP1" />
             <param name="Ti" value="VTI1" />
-            <param name="Kaw" value="0.5" />
+            <param name="Kaw" value="20" />
           </paramlist>
         </User>
         <User classid="UserCmp" defn="master:hardlimit" id="87112880" x="666" y="324" w="80" h="59" z="200" orient="0" link="-1" q="4" disable="false">
@@ -18692,7 +18668,7 @@
             <param name="Display" value="1" />
             <param name="Max" value="10" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="5" />
+            <param name="Value" value="6.5" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -18937,7 +18913,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="I_50_1" group="" url="" version="" build="" crc="24138304" instances="0" key="" view="false" date="1777032302" id="993684327">
+    <Definition classid="UserCmpDefn" name="I_50_1" group="" url="" version="" build="" crc="24138304" instances="0" key="" view="false" date="1779113973" id="993684327">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -21356,7 +21332,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="NSCC_22_2" group="" url="" version="" build="" crc="9674052" instances="0" key="" view="false" date="1777032303" id="844493054">
+    <Definition classid="UserCmpDefn" name="NSCC_22_2" group="" url="" version="" build="" crc="96334849" instances="0" key="" view="false" date="1779110504" id="844493054">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -22629,7 +22605,7 @@
         <User classid="UserCmp" name="master:const" id="919100348" x="1530" y="522" w="76" h="22" z="220" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
-            <param name="Value" value="1.0" />
+            <param name="Value" value="100.0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -22734,7 +22710,27 @@
             <param name="Display" value="1" />
             <param name="Max" value="100" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="60.0" />
+            <param name="Value" value="70.0" />
+            <param name="Units" value="" />
+            <param name="Collect" value="1" />
+          </paramlist>
+          <paramlist link="-1" name="F01" crc="26191013">
+            <param name="Name" value="fnn" />
+            <param name="Group" value="" />
+            <param name="Display" value="1" />
+            <param name="Max" value="100" />
+            <param name="Min" value="0.0" />
+            <param name="Value" value="70.0" />
+            <param name="Units" value="" />
+            <param name="Collect" value="1" />
+          </paramlist>
+          <paramlist link="-1" name="F02_n_03" crc="26191013">
+            <param name="Name" value="fnn" />
+            <param name="Group" value="" />
+            <param name="Display" value="1" />
+            <param name="Max" value="100" />
+            <param name="Min" value="0.0" />
+            <param name="Value" value="70.0" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -23423,7 +23419,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="ICC_30_1" group="" url="" version="" build="" crc="133637646" instances="0" key="" view="false" date="1777032303" id="935710248">
+    <Definition classid="UserCmpDefn" name="ICC_30_1" group="" url="" version="" build="" crc="23557467" instances="0" key="" view="false" date="1779111219" id="935710248">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -24030,7 +24026,7 @@
             <param name="Display" value="1" />
             <param name="Max" value="5" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="1.5" />
+            <param name="Value" value="1.7" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -24065,7 +24061,7 @@
         <User classid="UserCmp" name="master:const" id="1026324939" x="1512" y="306" w="76" h="22" z="200" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
-            <param name="Value" value="1.0" />
+            <param name="Value" value="100.0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -25423,7 +25419,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5" group="" url="" version="" build="" crc="99942635" instances="0" key="" view="false" date="1777032306" id="400880931">
+    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5" group="" url="" version="" build="" crc="99942635" instances="0" key="" view="false" date="1779091759" id="400880931">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -28341,7 +28337,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CCS_Controller19_1" group="" url="" version="" build="" crc="65182259" instances="0" key="" view="false" date="1777032308" id="933041950">
+    <Definition classid="UserCmpDefn" name="CCS_Controller19_1" group="" url="" version="" build="" crc="65182259" instances="0" key="" view="false" date="1779091759" id="933041950">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -30680,7 +30676,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="55429575" instances="0" key="" view="false" date="1777032299" id="1156659784">
+    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="55429575" instances="0" key="" view="false" date="1779091758" id="1156659784">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -32420,7 +32416,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER102_1" group="" url="" version="" build="" crc="51312264" instances="0" key="" view="false" date="1777032296" id="1211606280">
+    <Definition classid="UserCmpDefn" name="CONVERTER102_1" group="" url="" version="" build="" crc="61836701" instances="0" key="" view="false" date="1779091758" id="1211606280">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -37718,7 +37714,7 @@
         </Wire>
         <User classid="UserCmp" defn="master:capacitor" id="1005750327" x="1926" y="288" w="34" h="44" z="1" orient="1" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108275881">
-            <param name="C" value="25" />
+            <param name="C" value="40" />
             <param name="Name" value="C_dc" />
           </paramlist>
         </User>
@@ -38262,7 +38258,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="25975011" instances="0" key="" view="false" date="1777032295" id="1950721517">
+    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="25975011" instances="0" key="" view="false" date="1779091758" id="1950721517">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -38711,7 +38707,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_1_1_1" build="" crc="22491783" view="false" instances="0" date="1777032305" id="799483540" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_1_1_1" build="" crc="22491783" view="false" instances="0" date="1779091759" id="799483540" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -39510,7 +39506,7 @@
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_2_1" build="" crc="73575324" view="false" instances="0" date="1777032305" id="1072103981" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_2_1" build="" crc="73575324" view="false" instances="0" date="1779091759" id="1072103981" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -40316,7 +40312,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2" group="" url="" version="" build="" crc="55805828" instances="0" key="" view="false" date="1777032301" id="1373914470">
+    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2" group="" url="" version="" build="" crc="55805828" instances="0" key="" view="false" date="1779091758" id="1373914470">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -41889,7 +41885,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_1" build="" crc="79431219" view="false" instances="0" date="1777032298" id="328818687" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_1" build="" crc="79431219" view="false" instances="0" date="1779091758" id="328818687" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -42316,7 +42312,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_2" build="" crc="75333446" view="false" instances="0" date="1777032299" id="1574038705" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_2" build="" crc="75333446" view="false" instances="0" date="1779091758" id="1574038705" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -42875,10 +42871,10 @@ Output]]></segment>
   </List>
   <List classid="Template" />
   <hierarchy>
-    <call link="1003073727" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
-      <call link="866498961" name="MMC_step_voltage_reference:Main" z="-1" view="true" instance="0">
-        <call link="13902648" name="MMC_step_voltage_reference:CONVERTER253" z="90" view="false" instance="0" />
-        <call link="171519397" name="MMC_step_voltage_reference:CONVERTER102_1" z="170" view="false" instance="0">
+    <call link="984030915" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
+      <call link="866498961" name="MMC_step_voltage_reference:Main" z="-1" view="false" instance="0">
+        <call link="13902648" name="MMC_step_voltage_reference:CONVERTER253" z="80" view="false" instance="0" />
+        <call link="171519397" name="MMC_step_voltage_reference:CONVERTER102_1" z="150" view="true" instance="0">
           <call link="137886710" name="MMC_step_voltage_reference:DC_Voltage_Controller_32_1" z="240" view="false" instance="0">
             <call link="706785269" name="MMC_step_voltage_reference:PI_1" z="210" view="false" instance="0" />
             <call link="1225472770" name="MMC_step_voltage_reference:PI_2" z="270" view="false" instance="0" />
