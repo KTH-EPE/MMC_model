@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1779114523" />
+    <param name="revisor" value="geraldck, 1779179830" />
     <param name="fortran_version" value="$(DefaultCompilerKey)" />
     <param name="c_version" value="$(DefaultCKey)" />
     <param name="matlab_version" value="$(DefaultMatlabKey)" />
@@ -10487,7 +10487,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="72276838" view="false" date="1779112034">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="88602996" view="false" date="1779118633">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -10898,7 +10898,7 @@
         </User>
         <User classid="UserCmp" defn="master:capacitor" id="1315654948" x="486" y="198" w="34" h="44" z="1" orient="1" link="-1" q="4" disable="false" name="" layer="">
           <paramlist link="-1" name="" crc="108275881">
-            <param name="C" value="600" />
+            <param name="C" value="800" />
             <param name="Name" value="C_dc" />
           </paramlist>
         </User>
@@ -11221,7 +11221,7 @@
           <paramlist link="-1" name="" crc="28206164" />
         </User>
         <User classid="UserCmp" name="MMC_step_power_disturbance:CONVERTER102_1_2" id="1155983973" x="936" y="216" w="278" h="167" z="70" orient="4" defn="MMC_step_power_disturbance:CONVERTER102_1_2" link="-1" q="4" disable="false">
-          <paramlist link="-1" name="" crc="4572592">
+          <paramlist link="-1" name="" crc="37355015">
             <param name="Name" value="ALA MMC" />
             <param name="Vtr_1" value="400" />
             <param name="Vtr_2" value="360" />
@@ -11240,6 +11240,7 @@
             <param name="Pref" value="1000" />
             <param name="Qref" value="0" />
             <param name="idmode" value="0" />
+            <param name="Lg" value="0.0268" />
           </paramlist>
         </User>
         <User classid="UserCmp" name="MMC_step_power_disturbance:CONVERTER253" id="609475367" x="1170" y="198" w="173" h="110" z="80" orient="4" defn="MMC_step_power_disturbance:CONVERTER253" link="-1" q="4" disable="false">
@@ -12598,7 +12599,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2_2" group="" url="" version="" build="" crc="133543552" instances="0" key="" view="false" date="1779112034" id="449755302">
+    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2_2" group="" url="" version="" build="" crc="133543552" instances="0" key="" view="false" date="1779118636" id="449755302">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -14171,7 +14172,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_1_1_1_2" build="" crc="123713183" view="false" instances="0" date="1779112035" id="1134323463" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_1_1_1_2" build="" crc="123713183" view="false" instances="0" date="1779118638" id="1134323463" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -14970,7 +14971,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_2_1_2" build="" crc="111819311" view="false" instances="0" date="1779112035" id="1909640613" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_2_1_2" build="" crc="111819311" view="false" instances="0" date="1779118637" id="1909640613" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -15776,7 +15777,7 @@ Output]]></segment>
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1_2" group="" url="" version="" build="" crc="124588167" instances="0" key="" view="false" date="1779112034" id="657328344">
+    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1_2" group="" url="" version="" build="" crc="124588167" instances="0" key="" view="false" date="1779118636" id="657328344">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -17439,7 +17440,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_2_1" build="" crc="120021538" view="false" instances="0" date="1779112034" id="1523602720" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_2_1" build="" crc="120021538" view="false" instances="0" date="1779118635" id="1523602720" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -17975,7 +17976,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_1_1" build="" crc="33255153" view="false" instances="0" date="1779112034" id="1399074101" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_1_1" build="" crc="33255153" view="false" instances="0" date="1779118635" id="1399074101" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -18402,7 +18403,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1_2" group="" url="" version="" build="" crc="37837961" instances="0" key="" view="false" date="1779112034" id="977907466">
+    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1_2" group="" url="" version="" build="" crc="76385449" instances="0" key="" view="false" date="1779118635" id="977907466">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -18802,7 +18803,7 @@ Output]]></segment>
             <param name="Display" value="1" />
             <param name="Max" value="1" />
             <param name="Min" value="0.0" />
-            <param name="Value" value="0.1" />
+            <param name="Value" value="0.12" />
             <param name="Units" value="" />
             <param name="Collect" value="1" />
           </paramlist>
@@ -19709,7 +19710,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="I_50_1_2" group="" url="" version="" build="" crc="121723264" instances="0" key="" view="false" date="1779112034" id="1338034489">
+    <Definition classid="UserCmpDefn" name="I_50_1_2" group="" url="" version="" build="" crc="121723264" instances="0" key="" view="false" date="1779118636" id="1338034489">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -21970,7 +21971,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="NSCC_22_2_2" group="" url="" version="" build="" crc="18513634" instances="0" key="" view="false" date="1779112035" id="1794063336">
+    <Definition classid="UserCmpDefn" name="NSCC_22_2_2" group="" url="" version="" build="" crc="42743886" instances="0" key="" view="false" date="1779118637" id="1794063336">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -22012,6 +22013,12 @@ Output]]></segment>
             <cond />
             <help />
             <vis />
+          </parameter>
+          <parameter name="Lg" desc="AC grid inductance (Lg)" type="Real" group="" helpmode="Append" content_type="Constant" intent="Input" dim="1" animate="false" unit="" min="-1E+308" max="1E+308">
+            <value><![CDATA[0.0268]]></value>
+            <cond><![CDATA[true]]></cond>
+            <vis><![CDATA[true]]></vis>
+            <help><![CDATA[]]></help>
           </parameter>
         </category>
       </form>
@@ -22529,7 +22536,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:realpole" id="1600455704" x="900" y="450" w="80" h="37" z="160" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:realpole" id="1600455704" x="900" y="450" w="80" h="37" z="170" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="96177319">
             <param name="Limit" value="0" />
             <param name="COM" value="Real_Pole" />
@@ -22565,7 +22572,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:sumjct" id="659137998" x="450" y="540" w="80" h="63" z="170" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:sumjct" id="659137998" x="450" y="540" w="80" h="63" z="190" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="16672553">
             <param name="DPath" value="1" />
             <param name="A" value="0" />
@@ -22835,7 +22842,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:emtconst" id="1093167510" x="72" y="828" w="76" h="22" z="270" orient="0" link="-1" layer="" q="4" disable="false">
+        <User classid="UserCmp" defn="master:emtconst" id="1093167510" x="72" y="828" w="76" h="22" z="280" orient="0" link="-1" layer="" q="4" disable="false">
           <paramlist link="-1" name="" crc="116269466">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -22849,7 +22856,7 @@ Output]]></segment>
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="309117208" x="72" y="864" w="76" h="22" z="300" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="309117208" x="72" y="864" w="76" h="22" z="310" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="2.0" />
@@ -22900,7 +22907,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:square" id="1965738417" x="414" y="828" w="80" h="36" z="290" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:square" id="1965738417" x="414" y="828" w="80" h="36" z="300" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="123652463">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
@@ -22925,7 +22932,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:div" id="960957157" x="486" y="828" w="80" h="59" z="310" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:div" id="960957157" x="486" y="828" w="80" h="59" z="320" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="74852640">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
@@ -22950,7 +22957,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="0" y="-36" />
         </Wire>
-        <User classid="UserCmp" defn="master:mult" id="75953731" x="558" y="828" w="80" h="56" z="320" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:mult" id="75953731" x="558" y="828" w="80" h="56" z="330" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="29714769">
             <param name="DPath" value="1" />
             <param name="Name" value="" />
@@ -23042,7 +23049,7 @@ Output]]></segment>
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="129741259" x="792" y="882" w="76" h="22" z="330" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="129741259" x="792" y="882" w="76" h="22" z="340" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="2" />
@@ -23150,7 +23157,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:var_switch" id="447961362" x="1638" y="702" w="51" h="53" z="280" orient="0" defn="master:var_switch" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:var_switch" id="447961362" x="1638" y="702" w="51" h="53" z="290" orient="0" defn="master:var_switch" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="86328302">
             <param name="Name" value="n" />
             <param name="Group" value="" />
@@ -23240,10 +23247,10 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="1563436376" x="1530" y="522" w="76" h="22" z="220" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="1563436376" x="1530" y="522" w="76" h="22" z="230" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
-            <param name="Value" value="100.0" />
+            <param name="Value" value="50.0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -23254,7 +23261,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:var" id="326135137" x="1224" y="468" w="43" h="53" z="190" orient="0" defn="master:var" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:var" id="326135137" x="1224" y="468" w="43" h="53" z="200" orient="0" defn="master:var" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="26191013">
             <param name="Name" value="dampn" />
             <param name="Group" value="" />
@@ -23300,14 +23307,14 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:square" id="544305079" x="1566" y="558" w="80" h="36" z="260" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:square" id="544305079" x="1566" y="558" w="80" h="36" z="270" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="123652463">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="2027269795" x="1494" y="558" w="80" h="36" z="250" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="2027269795" x="1494" y="558" w="80" h="36" z="260" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="fnn" />
             <param name="COM" value="Gain" />
@@ -23316,7 +23323,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="1652137501" x="1422" y="558" w="80" h="36" z="240" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="1652137501" x="1422" y="558" w="80" h="36" z="250" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="2" />
             <param name="COM" value="Gain" />
@@ -23325,7 +23332,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:emtconst" id="139773328" x="1350" y="558" w="76" h="22" z="230" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:emtconst" id="139773328" x="1350" y="558" w="76" h="22" z="240" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="116269466">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -23341,7 +23348,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:var" id="1786816091" x="1224" y="540" w="34" h="53" z="210" orient="0" defn="master:var" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:var" id="1786816091" x="1224" y="540" w="34" h="53" z="220" orient="0" defn="master:var" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="26191013">
             <param name="Name" value="fnn" />
             <param name="Group" value="" />
@@ -23396,7 +23403,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="1424221259" x="1422" y="450" w="80" h="36" z="200" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="1424221259" x="1422" y="450" w="80" h="36" z="210" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="4" />
             <param name="COM" value="Gain" />
@@ -23505,11 +23512,27 @@ Output]]></segment>
           </paramlist>
         </User>
         <grouping />
-        <User classid="UserCmp" defn="master:const" id="1182863145" x="972" y="864" w="76" h="22" z="340" orient="4" link="-1" q="4" disable="false">
-          <paramlist link="-1" name="" crc="10628662">
-            <param name="Name" value="" />
-            <param name="Value" value="0.0268" />
-            <param name="Dim" value="1" />
+        <User classid="UserCmp" name="master:datalabel" id="38166018" x="972" y="864" w="18" h="23" z="1" orient="0" defn="master:datalabel" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="127230955">
+            <param name="Name" value="Lg" />
+            <param name="animate" value="0" />
+            <param name="display" value="0" />
+            <param name="datatype" value="2" />
+            <param name="index" value="1" />
+            <param name="Unit" value="" />
+            <param name="ivalue1" value="0" />
+            <param name="rvalue1" value="0" />
+            <param name="rvalue2" value="0" />
+            <param name="showani" value="0" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="971422357" name="" x="936" y="864" w="46" h="10" orient="0" disable="false">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:import" id="2096091529" x="162" y="342" w="60" h="25" z="160" orient="0" defn="master:import" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="117509081">
+            <param name="Name" value="Lg" />
           </paramlist>
         </User>
       </schematic>
@@ -24057,7 +24080,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="ICC_30_1_2" group="" url="" version="" build="" crc="718268" instances="0" key="" view="false" date="1779112035" id="1848443116">
+    <Definition classid="UserCmpDefn" name="ICC_30_1_2" group="" url="" version="" build="" crc="73630025" instances="0" key="" view="false" date="1779118637" id="1848443116">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -24099,6 +24122,12 @@ Output]]></segment>
             <cond />
             <help />
             <vis />
+          </parameter>
+          <parameter name="Lg" desc="AC grid inductance (Lg)" type="Real" group="" helpmode="Append" content_type="Constant" intent="Input" dim="1" animate="false" unit="" min="-1E+308" max="1E+308">
+            <value><![CDATA[0.0268]]></value>
+            <cond><![CDATA[true]]></cond>
+            <vis><![CDATA[true]]></vis>
+            <help><![CDATA[]]></help>
           </parameter>
         </category>
       </form>
@@ -24531,14 +24560,14 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:emtconst" id="241760462" x="1332" y="234" w="76" h="22" z="160" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:emtconst" id="241760462" x="1332" y="234" w="76" h="22" z="170" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="116269466">
             <param name="Name" value="" />
             <param name="Value" value="0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="753644380" x="1404" y="234" w="80" h="36" z="180" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="753644380" x="1404" y="234" w="80" h="36" z="190" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="4" />
             <param name="COM" value="Gain" />
@@ -24570,7 +24599,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:var" id="1213116325" x="1206" y="324" w="34" h="53" z="190" orient="0" defn="master:var" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:var" id="1213116325" x="1206" y="324" w="34" h="53" z="200" orient="0" defn="master:var" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="26191013">
             <param name="Name" value="fp" />
             <param name="Group" value="" />
@@ -24611,14 +24640,14 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:emtconst" id="1987052195" x="1332" y="342" w="76" h="22" z="210" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:emtconst" id="1987052195" x="1332" y="342" w="76" h="22" z="220" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="116269466">
             <param name="Name" value="" />
             <param name="Value" value="0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="1275893477" x="1404" y="342" w="80" h="36" z="220" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="1275893477" x="1404" y="342" w="80" h="36" z="230" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="2" />
             <param name="COM" value="Gain" />
@@ -24627,7 +24656,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:gain" id="1920382664" x="1476" y="342" w="80" h="36" z="230" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:gain" id="1920382664" x="1476" y="342" w="80" h="36" z="240" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34173863">
             <param name="G" value="fp" />
             <param name="COM" value="Gain" />
@@ -24636,7 +24665,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:square" id="2045246714" x="1548" y="342" w="80" h="36" z="240" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:square" id="2045246714" x="1548" y="342" w="80" h="36" z="250" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="123652463">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
@@ -24657,7 +24686,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:var" id="1863757216" x="1206" y="252" w="40" h="53" z="170" orient="0" defn="master:var" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:var" id="1863757216" x="1206" y="252" w="40" h="53" z="180" orient="0" defn="master:var" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="26191013">
             <param name="Name" value="damp" />
             <param name="Group" value="" />
@@ -24696,10 +24725,10 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="91856350" x="1512" y="306" w="76" h="22" z="200" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="91856350" x="1512" y="306" w="76" h="22" z="210" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
-            <param name="Value" value="100.0" />
+            <param name="Value" value="50.0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -24815,7 +24844,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:realpole" id="243766607" x="900" y="450" w="80" h="37" z="250" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:realpole" id="243766607" x="900" y="450" w="80" h="37" z="260" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="96177319">
             <param name="Limit" value="0" />
             <param name="COM" value="Real_Pole" />
@@ -24860,7 +24889,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:sumjct" id="1681861408" x="450" y="540" w="80" h="63" z="260" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:sumjct" id="1681861408" x="450" y="540" w="80" h="63" z="270" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="16672553">
             <param name="DPath" value="1" />
             <param name="A" value="0" />
@@ -25144,7 +25173,7 @@ Output]]></segment>
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:emtconst" id="1160750727" x="72" y="828" w="76" h="22" z="270" orient="0" link="-1" layer="" q="4" disable="false">
+        <User classid="UserCmp" defn="master:emtconst" id="1160750727" x="72" y="828" w="76" h="22" z="280" orient="0" link="-1" layer="" q="4" disable="false">
           <paramlist link="-1" name="" crc="116269466">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -25158,7 +25187,7 @@ Output]]></segment>
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="1706225678" x="72" y="864" w="76" h="22" z="290" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="1706225678" x="72" y="864" w="76" h="22" z="300" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="2.0" />
@@ -25209,7 +25238,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:square" id="501174494" x="414" y="828" w="80" h="36" z="280" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:square" id="501174494" x="414" y="828" w="80" h="36" z="290" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="123652463">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
@@ -25234,7 +25263,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:div" id="54251972" x="486" y="828" w="80" h="59" z="300" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:div" id="54251972" x="486" y="828" w="80" h="59" z="310" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="74852640">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
@@ -25259,7 +25288,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="0" y="-36" />
         </Wire>
-        <User classid="UserCmp" defn="master:mult" id="270862694" x="558" y="828" w="80" h="56" z="310" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:mult" id="270862694" x="558" y="828" w="80" h="56" z="320" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="29714769">
             <param name="DPath" value="1" />
             <param name="Name" value="" />
@@ -25517,13 +25546,29 @@ Output]]></segment>
           </paramlist>
         </User>
         <grouping />
-        <User classid="UserCmp" defn="master:const" id="671195727" x="972" y="864" w="76" h="22" z="320" orient="4" link="-1" q="4" disable="false">
-          <paramlist link="-1" name="" crc="10628662">
-            <param name="Name" value="" />
-            <param name="Value" value="0.0268" />
-            <param name="Dim" value="1" />
+        <User classid="UserCmp" name="master:import" id="890707320" x="162" y="324" w="60" h="25" z="160" orient="0" defn="master:import" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="117509081">
+            <param name="Name" value="Lg" />
           </paramlist>
         </User>
+        <User classid="UserCmp" name="master:datalabel" id="1528868707" x="972" y="864" w="18" h="23" z="1" orient="0" defn="master:datalabel" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="127230955">
+            <param name="Name" value="Lg" />
+            <param name="animate" value="0" />
+            <param name="display" value="0" />
+            <param name="datatype" value="2" />
+            <param name="index" value="1" />
+            <param name="Unit" value="" />
+            <param name="ivalue1" value="0" />
+            <param name="rvalue1" value="0" />
+            <param name="rvalue2" value="0" />
+            <param name="showani" value="0" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="1120136700" name="" x="936" y="864" w="46" h="10" orient="0" disable="false">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
       </schematic>
       <references>
         <using namespace="master" />
@@ -26057,7 +26102,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5_2" group="" url="" version="" build="" crc="100744815" instances="0" key="" view="false" date="1779112035" id="389536">
+    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5_2" group="" url="" version="" build="" crc="100744815" instances="0" key="" view="false" date="1779118638" id="389536">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -28975,7 +29020,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CCS_Controller19_1_2" group="" url="" version="" build="" crc="114593484" instances="0" key="" view="false" date="1779112035" id="1273183394">
+    <Definition classid="UserCmpDefn" name="CCS_Controller19_1_2" group="" url="" version="" build="" crc="114593484" instances="0" key="" view="false" date="1779118638" id="1273183394">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -31315,7 +31360,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1_2" group="" url="" version="" build="" crc="67882929" instances="0" key="" view="false" date="1779112034" id="1734456370">
+    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1_2" group="" url="" version="" build="" crc="67882929" instances="0" key="" view="false" date="1779118636" id="1734456370">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -33055,7 +33100,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER102_1_2" group="" url="" version="" build="" crc="24619426" instances="0" key="" view="false" date="1779112034" id="1122650548">
+    <Definition classid="UserCmpDefn" name="CONVERTER102_1_2" group="" url="" version="" build="" crc="130286939" instances="0" key="" view="false" date="1779118634" id="1122650548">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -33096,9 +33141,9 @@ Output]]></segment>
             <cond><![CDATA[true]]></cond>
             <vis><![CDATA[true]]></vis>
             <help><![CDATA[]]></help>
-            <choice cond=""><![CDATA[0 = Vdc mode]]></choice>
-            <choice cond=""><![CDATA[1 = P mode]]></choice>
-            <choice cond=""><![CDATA[2 = VP droop]]></choice>
+            <choice><![CDATA[0 = Vdc mode]]></choice>
+            <choice><![CDATA[1 = P mode]]></choice>
+            <choice><![CDATA[2 = VP droop]]></choice>
           </parameter>
           <parameter desc="System Nominal Frequency [fn]" name="fn" group="General" unit="Hz" min="-1E+308" max="1E+308" content_type="Constant" type="Real" helpmode="Append" intent="Input" dim="1" animate="false">
             <value><![CDATA[50]]></value>
@@ -33162,6 +33207,12 @@ Output]]></segment>
             <vis><![CDATA[true]]></vis>
             <help><![CDATA[]]></help>
             <animate />
+          </parameter>
+          <parameter name="Lg" desc="AC grid inductance (Lg)" type="Real" group="" helpmode="Append" content_type="Constant" intent="Input" dim="1" animate="false" unit="" min="-1E+308" max="1E+308">
+            <value><![CDATA[0.0268]]></value>
+            <cond><![CDATA[true]]></cond>
+            <vis><![CDATA[true]]></vis>
+            <help><![CDATA[]]></help>
           </parameter>
           <parameter name="Qref" desc="Reactive power reference Qref" type="Real" group="" helpmode="Append" content_type="Variable" intent="Input" dim="1" animate="false" unit="" min="-1E+308" max="1E+308">
             <value><![CDATA[0]]></value>
@@ -35135,7 +35186,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:multimeter" id="1691302248" x="810" y="306" w="44" h="54" z="170" orient="0" defn="master:multimeter" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:multimeter" id="1691302248" x="810" y="306" w="44" h="54" z="180" orient="0" defn="master:multimeter" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="27440011">
             <param name="MeasV" value="1" />
             <param name="MeasI" value="1" />
@@ -35170,7 +35221,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:xfmr-3p2w" id="1878640126" x="702" y="306" w="98" h="89" z="740" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:xfmr-3p2w" id="1878640126" x="702" y="306" w="98" h="89" z="750" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="86463138">
             <param name="Name" value="" />
             <param name="Tmva" value="Sn" />
@@ -35295,14 +35346,14 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="977169500" x="180" y="684" w="76" h="22" z="230" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="977169500" x="180" y="684" w="76" h="22" z="240" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="1.2" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="2135835581" x="180" y="648" w="76" h="22" z="220" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="2135835581" x="180" y="648" w="76" h="22" z="230" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0.36" />
@@ -35396,7 +35447,7 @@ Output]]></segment>
             <param name="true-color" value="#ff00c000" />
           </paramlist>
         </Line>
-        <User classid="UserCmp" name="master:const" id="1985459061" x="180" y="612" w="76" h="22" z="210" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="1985459061" x="180" y="612" w="76" h="22" z="220" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0.06" />
@@ -35421,14 +35472,14 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="962573441" x="180" y="576" w="76" h="22" z="200" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="962573441" x="180" y="576" w="76" h="22" z="210" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0.0003" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="1790877445" x="180" y="540" w="76" h="22" z="190" orient="0" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="1790877445" x="180" y="540" w="76" h="22" z="200" orient="0" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0.002" />
@@ -35662,7 +35713,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:abcdq0" defn="master:abcdq0" id="556520638" x="576" y="1638" w="80" h="60" z="510" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:abcdq0" defn="master:abcdq0" id="556520638" x="576" y="1638" w="80" h="60" z="520" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="116491288">
             <param name="IDir" value="0" />
             <param name="Theta" value="theta0" />
@@ -35670,7 +35721,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" defn="master:const" id="2037050896" x="504" y="1656" w="76" h="22" z="370" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" defn="master:const" id="2037050896" x="504" y="1656" w="76" h="22" z="380" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -35735,7 +35786,7 @@ Output]]></segment>
           <vertex x="36" y="36" />
           <vertex x="72" y="36" />
         </Wire>
-        <User classid="UserCmp" name="master:const" id="1432344597" x="972" y="1890" w="22" h="76" z="390" orient="3" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="1432344597" x="972" y="1890" w="22" h="76" z="400" orient="3" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -35798,7 +35849,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="422777238" x="1026" y="1890" w="22" h="76" z="400" orient="3" defn="master:const" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" id="422777238" x="1026" y="1890" w="22" h="76" z="410" orient="3" defn="master:const" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0" />
@@ -35899,14 +35950,14 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" defn="master:const" id="431340153" x="522" y="1836" w="76" h="22" z="380" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:const" defn="master:const" id="431340153" x="522" y="1836" w="76" h="22" z="390" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="" />
             <param name="Value" value="0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:abcdq0" defn="master:abcdq0" id="432897939" x="594" y="1818" w="80" h="60" z="490" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:abcdq0" defn="master:abcdq0" id="432897939" x="594" y="1818" w="80" h="60" z="500" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="116491288">
             <param name="IDir" value="0" />
             <param name="Theta" value="theta0n" />
@@ -36120,7 +36171,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datamerge" id="1115725642" x="792" y="1872" w="27" h="80" z="500" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="1115725642" x="792" y="1872" w="27" h="80" z="510" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -36163,7 +36214,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="54" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="846502152" x="756" y="1692" w="27" h="80" z="520" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="846502152" x="756" y="1692" w="27" h="80" z="530" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -36262,7 +36313,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datamerge" id="2047762857" x="1638" y="1782" w="27" h="80" z="620" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="2047762857" x="1638" y="1782" w="27" h="80" z="630" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -36361,7 +36412,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="2125177475" x="2376" y="1656" w="26" h="28" z="670" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="2125177475" x="2376" y="1656" w="26" h="28" z="680" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -36371,7 +36422,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1984843583" x="2322" y="1656" w="26" h="28" z="660" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="1984843583" x="2322" y="1656" w="26" h="28" z="670" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36381,7 +36432,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="498306670" x="2268" y="1656" w="26" h="28" z="650" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="498306670" x="2268" y="1656" w="26" h="28" z="660" orient="5" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36399,7 +36450,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="162" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datatap" id="1827792495" x="2286" y="1782" w="26" h="28" z="640" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="1827792495" x="2286" y="1782" w="26" h="28" z="650" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36409,7 +36460,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="665357573" x="2340" y="1782" w="26" h="28" z="630" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="665357573" x="2340" y="1782" w="26" h="28" z="640" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36419,7 +36470,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="28847846" x="2412" y="1782" w="26" h="28" z="590" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" id="28847846" x="2412" y="1782" w="26" h="28" z="600" orient="7" defn="master:datatap" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -36549,7 +36600,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="41287743" x="2268" y="1188" w="26" h="28" z="440" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="41287743" x="2268" y="1188" w="26" h="28" z="450" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36559,7 +36610,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="613913873" x="2214" y="1188" w="26" h="28" z="430" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="613913873" x="2214" y="1188" w="26" h="28" z="440" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36577,7 +36628,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="296237958" x="2214" y="1242" w="26" h="28" z="450" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="296237958" x="2214" y="1242" w="26" h="28" z="460" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36587,7 +36638,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="2139220233" x="2268" y="1242" w="26" h="28" z="460" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="2139220233" x="2268" y="1242" w="26" h="28" z="470" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36601,7 +36652,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="1487106672" x="2214" y="1296" w="26" h="28" z="310" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="1487106672" x="2214" y="1296" w="26" h="28" z="320" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36611,7 +36662,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="831787979" x="2268" y="1296" w="26" h="28" z="320" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="831787979" x="2268" y="1296" w="26" h="28" z="330" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36625,7 +36676,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="777693383" x="2214" y="1350" w="26" h="28" z="330" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="777693383" x="2214" y="1350" w="26" h="28" z="340" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36635,7 +36686,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="2024098943" x="2268" y="1350" w="26" h="28" z="340" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="2024098943" x="2268" y="1350" w="26" h="28" z="350" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36649,7 +36700,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="1965983957" x="2214" y="1404" w="26" h="28" z="350" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="1965983957" x="2214" y="1404" w="26" h="28" z="360" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -36659,7 +36710,7 @@ Output]]></segment>
             <param name="Name" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="491136449" x="2268" y="1404" w="26" h="28" z="360" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datatap" defn="master:datatap" id="491136449" x="2268" y="1404" w="26" h="28" z="370" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="38224701">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -36853,7 +36904,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="54" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="73130130" x="1242" y="756" w="27" h="80" z="730" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="73130130" x="1242" y="756" w="27" h="80" z="740" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -36946,7 +36997,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="54" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="715602478" x="1242" y="846" w="27" h="80" z="720" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="715602478" x="1242" y="846" w="27" h="80" z="730" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -37091,7 +37142,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="0" y="36" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="1807183113" x="1476" y="900" w="27" h="62" z="700" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="1807183113" x="1476" y="900" w="27" h="62" z="710" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="2" />
             <param name="Type" value="2" />
@@ -37148,7 +37199,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datamerge" id="1603968470" x="1476" y="828" w="27" h="62" z="680" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="1603968470" x="1476" y="828" w="27" h="62" z="690" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="2" />
             <param name="Type" value="2" />
@@ -37213,7 +37264,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="577320980" x="1584" y="828" w="45" h="80" z="710" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="577320980" x="1584" y="828" w="45" h="80" z="720" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="3" />
             <param name="Type" value="2" />
@@ -37278,7 +37329,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="54" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:datamerge" id="680000701" x="1476" y="738" w="27" h="62" z="690" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:datamerge" id="680000701" x="1476" y="738" w="27" h="62" z="700" orient="4" defn="master:datamerge" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="43697768">
             <param name="N" value="2" />
             <param name="Type" value="2" />
@@ -37344,7 +37395,7 @@ Output]]></segment>
             <param name="hl_color_adv" value="#FFFFFF00" />
             <param name="bdr_color_adv" value="#FF95918C" />
           </paramlist><![CDATA[Modulation index generator ]]></Sticky>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" id="543614273" x="342" y="1242" w="278" h="84" z="250" orient="0" defn="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" id="543614273" x="342" y="1242" w="278" h="84" z="260" orient="0" defn="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="88834966">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37387,7 +37438,7 @@ Output]]></segment>
             <param name="ymax" value="2" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:CCS_Controller19_1_2" id="1197107832" x="1440" y="1782" w="226" h="219" z="610" orient="0" defn="MMC_step_power_disturbance:CCS_Controller19_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:CCS_Controller19_1_2" id="1197107832" x="1440" y="1782" w="226" h="219" z="620" orient="0" defn="MMC_step_power_disturbance:CCS_Controller19_1_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="24105743">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37421,7 +37472,7 @@ Output]]></segment>
             <param name="Vdc_ref" value="Vdc_ref" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" id="433031019" x="2106" y="1764" w="278" h="146" z="580" orient="0" defn="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" id="433031019" x="2106" y="1764" w="278" h="146" z="590" orient="0" defn="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="98891942">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37457,8 +37508,8 @@ Output]]></segment>
             <param name="Vdc_ref" value="Vdc_ref" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:ICC_30_1_2" id="925965816" x="306" y="1728" w="189" h="243" z="470" orient="0" defn="MMC_step_power_disturbance:ICC_30_1_2" link="-1" q="4" disable="false">
-          <paramlist link="-1" name="" crc="45345552">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:ICC_30_1_2" id="925965816" x="306" y="1728" w="189" h="243" z="480" orient="0" defn="MMC_step_power_disturbance:ICC_30_1_2" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="109190979">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
             <param name="Kpq" value="0" />
@@ -37489,10 +37540,11 @@ Output]]></segment>
             <param name="Sn" value="Sn" />
             <param name="Xtrm" value="Xt" />
             <param name="Vdc_ref" value="Vdc_ref" />
+            <param name="Lg" value="Lg" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:NSCC_22_2_2" id="1038053219" x="1008" y="1728" w="189" h="243" z="480" orient="0" defn="MMC_step_power_disturbance:NSCC_22_2_2" link="-1" q="4" disable="false">
-          <paramlist link="-1" name="" crc="45345552">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:NSCC_22_2_2" id="1038053219" x="1008" y="1728" w="189" h="243" z="490" orient="0" defn="MMC_step_power_disturbance:NSCC_22_2_2" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="109190979">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
             <param name="Kpq" value="0" />
@@ -37523,9 +37575,10 @@ Output]]></segment>
             <param name="Sn" value="Sn" />
             <param name="Xtrm" value="Xt" />
             <param name="Vdc_ref" value="Vdc_ref" />
+            <param name="Lg" value="Lg" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:I_50_1_2" id="1600627239" x="2034" y="1278" w="278" h="251" z="300" orient="0" defn="MMC_step_power_disturbance:I_50_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:I_50_1_2" id="1600627239" x="2034" y="1278" w="278" h="251" z="310" orient="0" defn="MMC_step_power_disturbance:I_50_1_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="90288705">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37690,7 +37743,7 @@ Output]]></segment>
             <param name="Name" value="Qn" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" id="1078830768" x="360" y="1134" w="267" h="71" z="240" orient="0" defn="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" id="1078830768" x="360" y="1134" w="267" h="71" z="250" orient="0" defn="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="44048241">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37773,7 +37826,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" id="1546862602" x="1404" y="1278" w="278" h="84" z="290" orient="0" defn="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" id="1546862602" x="1404" y="1278" w="278" h="84" z="300" orient="0" defn="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="34626818">
             <param name="Name" value="" />
             <param name="DBlk" value="0" />
@@ -37833,7 +37886,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="588242751" name="MMC_step_power_disturbance:MMC_2_1_2" x="1116" y="180" w="145" h="176" z="550" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="588242751" name="MMC_step_power_disturbance:MMC_2_1_2" x="1116" y="180" w="145" h="176" z="560" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="33469193">
             <param name="Name" value="Arm A1" />
             <param name="Arm" value="" />
@@ -37843,7 +37896,7 @@ Output]]></segment>
             <param name="Upper_arm" value="Upper arm" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="25695144" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1116" y="468" w="141" h="171" z="560" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="25695144" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1116" y="468" w="141" h="171" z="570" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="87821270">
             <param name="Name" value="Arm A2" />
             <param name="Lower_arm" value="" />
@@ -37852,7 +37905,7 @@ Output]]></segment>
             <param name="Carm" value="Ceq" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="875833746" name="MMC_step_power_disturbance:MMC_2_1_2" x="1440" y="180" w="145" h="176" z="540" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="875833746" name="MMC_step_power_disturbance:MMC_2_1_2" x="1440" y="180" w="145" h="176" z="550" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="33469193">
             <param name="Name" value="Arm B1" />
             <param name="Arm" value="" />
@@ -37862,7 +37915,7 @@ Output]]></segment>
             <param name="Upper_arm" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="1290457879" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1440" y="468" w="141" h="171" z="570" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="1290457879" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1440" y="468" w="141" h="171" z="580" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="87821270">
             <param name="Name" value="Arm B2" />
             <param name="Lower_arm" value="" />
@@ -37871,7 +37924,7 @@ Output]]></segment>
             <param name="Carm" value="Ceq" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="1354562528" name="MMC_step_power_disturbance:MMC_2_1_2" x="1728" y="180" w="145" h="176" z="530" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="1354562528" name="MMC_step_power_disturbance:MMC_2_1_2" x="1728" y="180" w="145" h="176" z="540" orient="0" defn="MMC_step_power_disturbance:MMC_2_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="33469193">
             <param name="Name" value="Arm C1" />
             <param name="Arm" value="" />
@@ -37881,7 +37934,7 @@ Output]]></segment>
             <param name="Upper_arm" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="900574764" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1728" y="468" w="141" h="171" z="600" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="900574764" name="MMC_step_power_disturbance:MMC_1_1_1_2" x="1728" y="468" w="141" h="171" z="610" orient="0" defn="MMC_step_power_disturbance:MMC_1_1_1_2" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="87821270">
             <param name="Name" value="Arm C2" />
             <param name="Lower_arm" value="" />
@@ -38246,7 +38299,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:voltmeter" id="980537112" x="1980" y="324" w="26" h="44" z="180" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:voltmeter" id="980537112" x="1980" y="324" w="26" h="44" z="190" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="26842314">
             <param name="Name" value="Edc" />
           </paramlist>
@@ -38353,7 +38406,7 @@ Output]]></segment>
         </Wire>
         <User classid="UserCmp" defn="master:capacitor" id="151704943" x="1926" y="288" w="34" h="44" z="1" orient="1" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108275881">
-            <param name="C" value="40" />
+            <param name="C" value="100" />
             <param name="Name" value="C_dc" />
           </paramlist>
         </User>
@@ -38411,7 +38464,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="36" y="0" />
         </Wire>
-        <User classid="UserCmp" name="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" id="1302670942" x="360" y="1368" w="313" h="84" z="270" orient="0" defn="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" id="1302670942" x="360" y="1368" w="313" h="84" z="280" orient="0" defn="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="71915710">
             <param name="Name" value="P_Vdc_Droop_50_2_1" />
             <param name="DBlk" value="0" />
@@ -38490,7 +38543,7 @@ Output]]></segment>
             <param name="Name" value="idmode" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:select" id="1222786351" x="810" y="1242" w="82" h="91" z="410" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:select" id="1222786351" x="810" y="1242" w="82" h="91" z="420" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108938206">
             <param name="A" value="1" />
             <param name="DPath" value="1" />
@@ -38527,7 +38580,7 @@ Output]]></segment>
             <param name="showani" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:select" id="783481871" x="936" y="1242" w="82" h="91" z="420" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:select" id="783481871" x="936" y="1242" w="82" h="91" z="430" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108938206">
             <param name="A" value="1" />
             <param name="DPath" value="1" />
@@ -38554,7 +38607,7 @@ Output]]></segment>
           <vertex x="0" y="0" />
           <vertex x="54" y="0" />
         </Wire>
-        <User classid="UserCmp" defn="master:compare" id="1203459000" x="810" y="1314" w="59" h="80" z="260" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:compare" id="1203459000" x="810" y="1314" w="59" h="80" z="270" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="18432996">
             <param name="X" value="0.1" />
             <param name="OL" value="0" />
@@ -38614,7 +38667,7 @@ Output]]></segment>
           <vertex x="0" y="36" />
           <vertex x="18" y="36" />
         </Wire>
-        <User classid="UserCmp" defn="master:compare" id="1757353515" x="936" y="1314" w="59" h="80" z="280" orient="3" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:compare" id="1757353515" x="936" y="1314" w="59" h="80" z="290" orient="3" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="18432996">
             <param name="X" value="1.1" />
             <param name="OL" value="0" />
@@ -38689,6 +38742,11 @@ Output]]></segment>
             <param name="true-color" value="#ff00c000" />
           </paramlist>
         </Line>
+        <User classid="UserCmp" name="master:import" id="1503221005" x="288" y="342" w="60" h="25" z="170" orient="0" defn="master:import" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="117509081">
+            <param name="Name" value="Lg" />
+          </paramlist>
+        </User>
       </schematic>
       <references>
         <using namespace="master" />
@@ -38897,7 +38955,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="116917830" instances="0" key="" view="false" date="1779112035" id="1305833230">
+    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="116917830" instances="0" key="" view="false" date="1779118639" id="1305833230">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -39366,24 +39424,24 @@ Output]]></segment>
     <call link="456440238" name="MMC_step_power_disturbance:DS" z="-1" view="false" instance="0">
       <call link="866498961" name="MMC_step_power_disturbance:Main" z="-1" view="true" instance="0">
         <call link="1155983973" name="MMC_step_power_disturbance:CONVERTER102_1_2" z="70" view="false" instance="0">
-          <call link="1078830768" name="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" z="240" view="false" instance="0">
+          <call link="1078830768" name="MMC_step_power_disturbance:DC_Voltage_Controller_32_1_2" z="250" view="false" instance="0">
             <call link="1228195408" name="MMC_step_power_disturbance:PI_1_1" z="210" view="false" instance="0" />
             <call link="852875402" name="MMC_step_power_disturbance:PI_2_1" z="270" view="false" instance="0" />
           </call>
-          <call link="543614273" name="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" z="250" view="false" instance="0" />
-          <call link="1302670942" name="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" z="270" view="false" instance="0" />
-          <call link="1546862602" name="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" z="290" view="false" instance="0" />
-          <call link="1600627239" name="MMC_step_power_disturbance:I_50_1_2" z="300" view="false" instance="0" />
-          <call link="925965816" name="MMC_step_power_disturbance:ICC_30_1_2" z="470" view="false" instance="0" />
-          <call link="1038053219" name="MMC_step_power_disturbance:NSCC_22_2_2" z="480" view="false" instance="0" />
-          <call link="1354562528" name="MMC_step_power_disturbance:MMC_2_1_2" z="530" view="false" instance="0" />
-          <call link="875833746" name="MMC_step_power_disturbance:MMC_2_1_2" z="540" view="false" instance="1" />
-          <call link="588242751" name="MMC_step_power_disturbance:MMC_2_1_2" z="550" view="false" instance="2" />
-          <call link="25695144" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="560" view="false" instance="0" />
-          <call link="1290457879" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="570" view="false" instance="1" />
-          <call link="433031019" name="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" z="580" view="false" instance="0" />
-          <call link="900574764" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="600" view="false" instance="2" />
-          <call link="1197107832" name="MMC_step_power_disturbance:CCS_Controller19_1_2" z="610" view="false" instance="0" />
+          <call link="543614273" name="MMC_step_power_disturbance:Active_Power_Controller_30_1_2" z="260" view="false" instance="0" />
+          <call link="1302670942" name="MMC_step_power_disturbance:P_Vdc_Droop_50_2_2" z="280" view="false" instance="0" />
+          <call link="1546862602" name="MMC_step_power_disturbance:Reactive_Power_Controller_31_1_2" z="300" view="false" instance="0" />
+          <call link="1600627239" name="MMC_step_power_disturbance:I_50_1_2" z="310" view="false" instance="0" />
+          <call link="925965816" name="MMC_step_power_disturbance:ICC_30_1_2" z="480" view="false" instance="0" />
+          <call link="1038053219" name="MMC_step_power_disturbance:NSCC_22_2_2" z="490" view="false" instance="0" />
+          <call link="1354562528" name="MMC_step_power_disturbance:MMC_2_1_2" z="540" view="false" instance="0" />
+          <call link="875833746" name="MMC_step_power_disturbance:MMC_2_1_2" z="550" view="false" instance="1" />
+          <call link="588242751" name="MMC_step_power_disturbance:MMC_2_1_2" z="560" view="false" instance="2" />
+          <call link="25695144" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="570" view="false" instance="0" />
+          <call link="1290457879" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="580" view="false" instance="1" />
+          <call link="433031019" name="MMC_step_power_disturbance:Modulation_Calculation_36_5_2" z="590" view="false" instance="0" />
+          <call link="900574764" name="MMC_step_power_disturbance:MMC_1_1_1_2" z="610" view="false" instance="2" />
+          <call link="1197107832" name="MMC_step_power_disturbance:CCS_Controller19_1_2" z="620" view="false" instance="0" />
         </call>
         <call link="609475367" name="MMC_step_power_disturbance:CONVERTER253" z="80" view="false" instance="0" />
       </call>
