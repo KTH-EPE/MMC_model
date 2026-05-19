@@ -1,5 +1,5 @@
 ac_grid:
-  SCR: 15
+  SCR: 10
   X_R: 10
 voltage_ref_step:
   path: ../../pscad_model/MMC_step_voltage_reference.pscx
@@ -7,20 +7,18 @@ voltage_ref_step:
   step_up_voltage: 652.8
   step_down_voltage: 627.2
   ref_power: 900
-  step_up_power: 900
-  step_down_power: 800
-  test: u_ref_step_up
+  test: u_ref_step_down
   output:
     file_name: step_u_ref_response
     result_file: ../../pscad_model/MMC_step_voltage_reference.gf46
-    directory: ../../output/simulation_results/step_up_voltage_ref_response
+    directory: ../../output/simulation_results/step_down_voltage_ref_response
 
 power_ref_step:
   path: ../../pscad_model/MMC_step_power_reference.pscx
   name: MMC_step_power_reference
   ref_power: -900
-  step_up_power: -800
-  step_down_power: -700
+  step_up_power: -1000
+  step_down_power: -800
   test: p_ref_step_up
   ramp_rate: 500
   output:
@@ -44,10 +42,10 @@ step_voltage_disturbance:
 step_power_disturbance:
   path: ../../pscad_model/MMC_step_power_disturbance.pscx
   name: MMC_step_power_disturbance
-  ref_power: 800
+  ref_power: 900
   test: p_step_up
-  step_up_power: 900
-  step_down_power: 700
+  step_up_power: 1000
+  step_down_power: 800
   output:
     file_name: step_p_dist_response
     result_file: ../../pscad_model/MMC_step_power_disturbance.gf46

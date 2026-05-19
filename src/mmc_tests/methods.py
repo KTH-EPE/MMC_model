@@ -179,6 +179,8 @@ def connect_step_voltage_ref_model(proj_path: Path, proj_name: str, test: str,
     # Compute equivalent grid impedance from SCR and X/R ratio
     lg, rg = apply_scr_and_xr(scr=SCR, xr=X_R)
 
+    mmc.parameters(Lg=lg)
+
     # Apply grid impedance to AC grid component
     ac_grid = proj.component(13902648)
     ac_grid.parameters(Rg=rg, Lg=lg)
@@ -265,6 +267,8 @@ def connect_step_power_disturbance_model(proj_path: Path, proj_name: str, test: 
 
     # Compute equivalent grid impedance from SCR and X/R ratio
     lg, rg = apply_scr_and_xr(scr=SCR, xr=X_R)
+
+    mmc.parameters(Lg=lg)
 
     # Apply grid impedance to AC grid component
     ac_grid = proj.component(609475367)
@@ -361,6 +365,8 @@ def connect_step_voltage_disturbance_model(proj_path: Path, proj_name: str, test
 
     # Compute equivalent grid impedance from SCR and X/R ratio
     lg, rg = apply_scr_and_xr(scr=SCR, xr=X_R)
+
+    mmc.parameters(Lg=lg)
 
     # Apply grid impedance to AC grid component
     ac_grid = proj.component(1350091687)
@@ -472,6 +478,8 @@ def connect_step_power_ref_model(proj_path: Path, proj_name: str, test: str,
     # Compute grid equivalent impedance from SCR and X/R ratio
     lg, rg = apply_scr_and_xr(scr=SCR, xr=X_R)
 
+    mmc.parameters(Lg=lg)
+
     # Apply grid impedance to AC grid component
     ac_grid = proj.component(2126013019)
     ac_grid.parameters(Rg=rg, Lg=lg)
@@ -542,7 +550,7 @@ def configure_volt_ref_step_response_test(test: str, component,
 # Grid parameter calculation
 # =========================
 def apply_scr_and_xr(scr: float, xr: float,
-                     sn: float = 1000., fn: float = 50.) -> (float, float):
+                     sn: float = 1200., fn: float = 50.) -> (float, float):
     """
     Compute equivalent grid inductance (Lg) and resistance (Rg)
     from Short Circuit Ratio (SCR) and X/R ratio.

@@ -79,7 +79,7 @@ def generate_parameter_space():
     """
     inductors = [i * 1e-3 for i in range(400, 901, 50)]  # Convert mH → H
     resistors = list(range(6, 11))                       # Integer Ohmic values
-    capacitors = list(range(500, 2500, 100))             # Capacitance values in uF
+    capacitors = list(range(800, 2101, 100))             # Capacitance values in uF
 
     return inductors, resistors, capacitors
 

@@ -11,7 +11,7 @@ with open("config.yaml") as f:
 # Extract configuration for the voltage reference step experiment
 PROJECT_PATH = Path(cfg["voltage_ref_step"]["path"])              # PSCAD project file path
 PROJECT_NAME = cfg["voltage_ref_step"]["name"]                    # Project name inside PSCAD
-OUTPUT_FILE_NAME = cfg["voltage_ref_step"]["output"]["file_name"] # Base name for PSCAD output file
+OUTPUT_FILE_NAME = cfg["voltage_ref_step"]["output"]["file_name"]  # Base name for PSCAD output file
 RESULT_FILE = Path(f'{cfg["voltage_ref_step"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["voltage_ref_step"]["output"]["directory"])     # Directory for storing processed results
 
@@ -47,7 +47,7 @@ def run_single_test():
         components=components,
         L=0.4,
         C=1300,
-        R=6,
+        R=8,
         result_file=RESULT_FILE
     )
 
@@ -74,9 +74,9 @@ def generate_parameter_space():
     This parameter space represents variations in the DC-side equivalent
     network influencing voltage control dynamics.
     """
-    inductors = [i * 1e-3 for i in range(400, 901, 50)]  # Convert mH → H
+    inductors = [i * 1e-3 for i in range(400, 801, 100)]  # Convert mH → H
     resistors = list(range(6, 11))                       # Integer Ohmic values
-    capacitors = list(range(500, 2500, 100))             # Capacitance values in uF
+    capacitors = list(range(800, 2101, 100))             # Capacitance values in uF
 
     return inductors, resistors, capacitors
 
