@@ -71,7 +71,7 @@ def generate_parameter_space():
     - Inductance is swept from 0.4 H to 0.9 H (step = 0.05 H)
     - Resistance is swept from 6 to 10 Ohm
     """
-    inductors = [i * 1e-3 for i in range(400, 901, 50)]  # Convert mH → H
+    inductors = [i * 1e-3 for i in range(400, 801, 50)]  # Convert mH → H
     resistors = list(range(6, 11))                       # Integer Ohmic values
 
     return inductors, resistors

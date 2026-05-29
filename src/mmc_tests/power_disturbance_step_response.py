@@ -14,11 +14,8 @@ PROJECT_NAME = cfg["step_power_disturbance"]["name"]                    # Projec
 OUTPUT_FILE_NAME = cfg["step_power_disturbance"]["output"]["file_name"]  # Base name for PSCAD output file
 RESULT_FILE = Path(f'{cfg["step_power_disturbance"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["step_power_disturbance"]["output"]["directory"])     # Directory for storing processed results
-
-TEST = cfg["step_power_disturbance"]["test"]                            # Test type ("p_step_up" or "p_step_down")
 REF_POWER = cfg["step_power_disturbance"]["ref_power"]                  # Initial steady-state active power
-STEP_UP_POWER = cfg["step_power_disturbance"]["step_up_power"]          # Power after step-up disturbance
-STEP_DOWN_POWER = cfg["step_power_disturbance"]["step_down_power"]      # Power after step-down disturbance
+STEP_POWER = cfg["step_power_disturbance"]["step_power"]          # Power after step-up disturbance
 
 
 # =========================
@@ -38,11 +35,9 @@ def run_single_test():
     proj, components = connect_step_power_disturbance_model(
         proj_path=PROJECT_PATH,
         proj_name=PROJECT_NAME,
-        test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
         ref_power=REF_POWER,
-        step_up_P=STEP_UP_POWER,
-        step_down_P=STEP_DOWN_POWER
+        step_P=STEP_POWER
     )
 
     # Run simulation for a single RLC configuration
@@ -77,7 +72,7 @@ def generate_parameter_space():
 
     This parameter space represents variations in the DC-side equivalent network.
     """
-    inductors = [i * 1e-3 for i in range(400, 901, 50)]  # Convert mH → H
+    inductors = [i * 1e-3 for i in range(400, 801, 100)]  # Convert mH → H
     resistors = list(range(6, 11))                       # Integer Ohmic values
     capacitors = list(range(800, 2101, 100))             # Capacitance values in uF
 
@@ -102,11 +97,9 @@ def run_parameter_sweep():
     proj, components = connect_step_power_disturbance_model(
         proj_path=PROJECT_PATH,
         proj_name=PROJECT_NAME,
-        test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
         ref_power=REF_POWER,
-        step_up_P=STEP_UP_POWER,
-        step_down_P=STEP_DOWN_POWER
+        step_P=STEP_POWER
     )
 
     # Step 2: Generate sweep values

@@ -223,9 +223,8 @@ def connect_step_voltage_ref_model(proj_path: Path, proj_name: str, test: str,
     return proj, components
 
 
-def connect_step_power_disturbance_model(proj_path: Path, proj_name: str, test: str,
-                                         output_file_name: str, ref_power: float,
-                                         step_up_P: float, step_down_P: float):
+def connect_step_power_disturbance_model(proj_path: Path, proj_name: str, output_file_name: str, ref_power: float,
+                                         step_P: float):
     """
     Connect to a PSCAD project configured for active power disturbance tests
     under DC voltage control mode.
@@ -243,8 +242,7 @@ def connect_step_power_disturbance_model(proj_path: Path, proj_name: str, test: 
         test             : Type of disturbance ("p_step_up" or "p_step_down")
         output_file_name : Name for PSCAD output file
         ref_power        : Initial steady-state active power reference
-        step_up_P        : Power value after step-up disturbance
-        step_down_P      : Power value after step-down disturbance
+        step_P           : Power value after step disturbance
 
     Returns:
         proj        : Configured PSCAD project object
@@ -303,10 +301,7 @@ def connect_step_power_disturbance_model(proj_path: Path, proj_name: str, test: 
 
         # Apply active power disturbance (step input)
         elif name == "Pref_new":
-            if test == "p_step_up":
-                comp.parameters(Value=step_up_P)
-            else:
-                comp.parameters(Value=step_down_P)
+            comp.parameters(Value=step_P)
 
     # Validate that all required components were found
     found = set(components.keys())
