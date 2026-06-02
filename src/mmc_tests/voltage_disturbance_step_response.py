@@ -12,7 +12,7 @@ OUTPUT_FILE_NAME = cfg["step_voltage_disturbance"]["output"]["file_name"]  # Bas
 RESULT_FILE = Path(f'{cfg["step_voltage_disturbance"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["step_voltage_disturbance"]["output"]["directory"])     # Directory for storing processed results
 
-REF_POWER = cfg["step_voltage_disturbance"]["ref_power"]                  # Initial steady-state active power
+INITIAL_POWER = cfg["step_voltage_disturbance"]["initial_power"]                  # Initial steady-state active power
 POWER_STEP = cfg["step_voltage_disturbance"]["step_power"]                # Power disturbance magnitude
 STEP_UP_VOLTAGE = cfg["step_voltage_disturbance"]["step_up_voltage"]      # Voltage step-up value
 STEP_DOWN_VOLTAGE = cfg["step_voltage_disturbance"]["step_down_voltage"]  # Voltage step-down value
@@ -37,7 +37,7 @@ def run_single_test():
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER,
+        ref_power=INITIAL_POWER,
         power_step=POWER_STEP,
         step_up_u=STEP_UP_VOLTAGE,
         step_down_u=STEP_DOWN_VOLTAGE
@@ -96,7 +96,7 @@ def run_parameter_sweep():
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER,
+        ref_power=INITIAL_POWER,
         power_step=POWER_STEP,
         step_up_u=STEP_UP_VOLTAGE,
         step_down_u=STEP_DOWN_VOLTAGE
