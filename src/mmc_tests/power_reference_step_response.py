@@ -14,7 +14,7 @@ PROJECT_NAME = cfg["power_ref_step"]["name"]                    # Project name i
 OUTPUT_FILE_NAME = cfg["power_ref_step"]["output"]["file_name"] # Base name for PSCAD output file
 RESULT_FILE = Path(f'{cfg["power_ref_step"]["output"]["result_file"]}/{OUTPUT_FILE_NAME}')  # Temporary file
 OUTPUT_DIR = Path(cfg["power_ref_step"]["output"]["directory"])     # Directory for storing processed results
-REF_POWER = cfg["power_ref_step"]["ref_power"]                  # Initial steady-state active power
+INITIAL_POWER = cfg["power_ref_step"]["initial_power"]                  # Initial steady-state active power
 STEP_UP_POWER = cfg["power_ref_step"]["step_up_power"]          # Power reference after step-up event
 STEP_DOWN_POWER = cfg["power_ref_step"]["step_down_power"]      # Power reference after step-down event
 TEST = cfg["power_ref_step"]["test"]                            # Test type ("p_ref_step_up" or "p_ref_step_down")
@@ -38,7 +38,7 @@ def run_single_test():
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER,
+        ref_power=INITIAL_POWER,
         step_up_P=STEP_UP_POWER,
         step_down_P=STEP_DOWN_POWER,
         ramp_rate=RAMP_RATE
@@ -97,7 +97,7 @@ def run_parameter_sweep():
         proj_name=PROJECT_NAME,
         test=TEST,
         output_file_name=OUTPUT_FILE_NAME,
-        ref_power=REF_POWER,
+        ref_power=INITIAL_POWER,
         step_up_P=STEP_UP_POWER,
         step_down_P=STEP_DOWN_POWER,
         ramp_rate=RAMP_RATE
