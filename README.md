@@ -165,7 +165,7 @@ Then install all dependencies:
 
 Activate the environment:
 
-`poetry shell`
+`poetry env activate`
 
 Run the tests in "mmc_tests" as desired
 
