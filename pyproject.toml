@@ -1,18 +1,20 @@
 [project]
 name = "mmc-model"
 version = "0.1.0"
-description = ""
+description = "Simulation and analysis of standalone MMC dynamic tests for interoperability"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "CGerald13",email = "kpugerald@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy (>=2.4.4,<3.0.0)",
     "pandas (>=3.0.2,<4.0.0)",
     "matplotlib (>=3.10.8,<4.0.0)",
     "mhi-pscad (>=3.1.1,<4.0.0)",
-    "pyyaml (>=6.0.3,<7.0.0)"
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "salib (>=1.5.2,<2.0.0)",
+    "scikit-learn (>=1.9.0,<2.0.0)",
+    "shell (>=1.0.1,<2.0.0)",
 ]
 
 [tool.poetry]

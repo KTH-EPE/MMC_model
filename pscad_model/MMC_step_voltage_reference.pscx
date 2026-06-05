@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1780479758" />
+    <param name="revisor" value="geraldck, 1780578320" />
     <param name="fortran_version" value="$(DefaultCompilerKey)" />
     <param name="c_version" value="$(DefaultCKey)" />
     <param name="matlab_version" value="$(DefaultMatlabKey)" />
@@ -14774,7 +14774,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="36196997" view="false" date="1780479721">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="5787557" view="false" date="1780479721">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -15171,7 +15171,7 @@
         </User>
         <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER253" id="13902648" x="1206" y="198" w="173" h="110" z="80" orient="4" defn="MMC_step_voltage_reference:CONVERTER253" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="4045761">
-            <param name="Name" value="" />
+            <param name="Name" value="AC_Grid" />
             <param name="Vtrms" value="400" />
             <param name="Sn" value="1265" />
             <param name="fn" value="50" />
@@ -43017,7 +43017,7 @@ Output]]></segment>
   </List>
   <List classid="Template" />
   <hierarchy>
-    <call link="1910251544" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
+    <call link="1690311867" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
       <call link="866498961" name="MMC_step_voltage_reference:Main" z="-1" view="true" instance="0">
         <call link="13902648" name="MMC_step_voltage_reference:CONVERTER253" z="80" view="false" instance="0" />
         <call link="171519397" name="MMC_step_voltage_reference:CONVERTER102_1" z="150" view="false" instance="0">

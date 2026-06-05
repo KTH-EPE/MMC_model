@@ -33,14 +33,17 @@ MMC_model/
 ├── result_analysis/               # Post-processing & plotting scripts
 │
 │── src/                           # (Optional) reusable source modules
-│   mmc_tests/                     # Main simulation scripts
+│   simulation_scripts/                     # Main simulation scripts
 │   ├── config.yaml                # Experiment configuration file
 │   ├── methods.py                 # Core PSCAD interface & utilities
 │   │
 │   ├── power_disturbance_step_response.py
 │   ├── power_reference_step_response.py
 │   ├── voltage_disturbance_step_response.py
-│   └── voltage_reference_step_response.py
+    ├── voltage_reference_step_response.py
+    ├── sensitivity_analysis_input_data_generator.py
+    ├── sensitivity_analysis_voltage_step_ref_response.py
+│   └── voltage_reference_step_response_fpr_sensitivity_analysis.py
 │
 ├── poetry.lock                    # Locked dependencies (Poetry)
 ├── pyproject.toml                 # Project configuration & dependencies
@@ -78,6 +81,14 @@ MMC_model/
 - Purpose: Analyze active power tracking performance under reference changes
 - Control mode: Active power control (`idmode = 1`)
 - In the `config.py` file, set `test: p_ref_step_up` or `test: p_ref_step_down`
+---
+
+### 3.5 Sensitivity analysis
+- Sensitivity analysis assess the impact of the DC and AC grid parameters on control response.
+- File: `sensitivity_analysis_input_data_generator.py` generates sample data
+- File: `voltage_reference_step_response_for_sensitivity_analysis.py` performs EMT simulations in PSCAD using the sample data.
+- The KPI's from the EMT simulations are processed using file: `step_voltage_ref_response_result_analysis.ipynb` in the result analysis directory.
+- Sobol sensitivity analysis is then performed using a surrogate PCE model with file: `sensitivity_analysis_voltage_step_ref_response.py`.
 ---
 
 ## 4. Parameter Sweeps

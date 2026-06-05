@@ -12,7 +12,7 @@ from mhi.pscad.utilities.file import OutFile
 # =========================
 # Contains system parameters such as SCR, X/R ratio,
 # and step magnitudes for voltage reference tests
-with open("config.yaml") as f:
+with open("\\config.yaml") as f:
     cfg = yaml.safe_load(f)
 
 X_R = cfg["ac_grid"]["X_R"]  # Grid X/R ratio
@@ -41,7 +41,7 @@ def format_lcr_filename(L, C, R):
 
     Inductance is converted to mH for readability.
     """
-    return f"step_u_ref_response_L{int(L * 1e3)}_C{int(C)}_R{int(R)}_.csv"
+    return f"step_u_ref_response_L{str(round(L * 1e3, 3))}_C{str(round(C, 3))}_R{str(round(R, 3))}_.csv"
 
 
 def format_rl_filename(L, R):
@@ -68,6 +68,33 @@ def run_lcr_simulation(proj, components, L: float, C: float, R: float, result_fi
     components["R"].parameters(R=R)
 
     print(f"Running: L={L}, C={C}, R={R}")
+
+    proj.run()
+
+    outfile = OutFile(str(result_file))
+    outfile.toCSV()
+
+    return Path(f"{result_file}.csv")
+
+
+def run_lcr_sensitivity_simulation(proj, components, L: float, C: float, R: float, Lg: float, Rg: float,
+                                   result_file: Path):
+    """
+    Run a single PSCAD simulation for an RLC DC grid equivalent model for sensitivity analysis.
+
+    Steps:
+    1. Update component parameters
+    2. Execute simulation
+    3. Export results to CSV
+    """
+    components["L"].parameters(L=L)
+    components["C"].parameters(C=C)
+    components["R"].parameters(R=R)
+    components["mmc"].parameters(Lg=Lg)
+    components["mmc"].parameters(idmode="0")  # idmode = 0 → DC bus voltage control mode
+    components["AC"].parameters(Rg=Rg, Lg=Lg)
+
+    print(f"Running: L={L}, C={C}, R={R}, Rg={Rg}, Lg={Lg}")
 
     proj.run()
 
@@ -107,10 +134,30 @@ def run_rlc_parameter_sweep(inductor_values, resistor_values, capacitor_values,
     """
     for L, R, C in itertools.product(inductor_values, resistor_values, capacitor_values):
         try:
-            # NOTE: argument order bug fixed (L, C, R)
             csv_file = run_lcr_simulation(proj, components, L, C, R, result_file)
 
             new_name = format_lcr_filename(L, C, R)
+            move_result_file(csv_file, output_dir, new_name)
+
+        except Exception as e:
+            print(f"Failed for L={L}, C={C}, R={R}: {e}")
+
+
+def run_rlc_sensitivity_parameter_sweep(input_sample_data, output_dir, result_file, proj, components):
+    """
+    Perform a full parameter sweep over L, R, and C values for sensitivity analysis.
+    Each simulation result is saved with a unique filename.
+    """
+    for indx, row in input_sample_data.iterrows():
+        L = round(row["L"] * 1E-3, 6)  # Convert to H
+        R = row["R"]
+        C = row["C"]
+        Rg = row["Rg"]
+        Lg = row["Lg"]
+        try:
+            csv_file = run_lcr_sensitivity_simulation(proj=proj, components=components, L=L, C=C, R=R, Rg=Rg, Lg=Lg,
+                                                      result_file=result_file)
+            new_name = format_lcr_filename(L=L, C=C, R=R)
             move_result_file(csv_file, output_dir, new_name)
 
         except Exception as e:
@@ -192,8 +239,79 @@ def connect_step_voltage_ref_model(proj_path: Path, proj_name: str, test: str,
     canvas = proj.canvas("Main")
 
     # Mapping between PSCAD component names and internal keys
-    # Full RLC equivalent is required for DC grid representation
     required = {"R_dc": "R", "L_dc": "L", "C_dc": "C"}
+    components = {}
+
+    # Iterate through all components in the model
+    for comp in canvas.components():
+        try:
+            name = comp.parameters().get("Name")  # Retrieve component name
+        except Exception:
+            continue  # Skip components without accessible parameters
+
+        # Store required DC-side components
+        if name in required:
+            components[required[name]] = comp
+
+        # Configure voltage reference step input
+        elif name == "UC0_step":
+            configure_volt_ref_step_response_test(test, comp)
+
+        # Set initial (pre-disturbance) active power reference
+        elif name == "Pref0":
+            comp.parameters(Value=ref_power)
+
+    # Validate that all required components were found
+    missing = set(required.values()) - set(components.keys())
+    if missing:
+        raise ValueError(f"Missing components in PSCAD model: {missing}")
+
+    return proj, components
+
+
+def connect_step_voltage_ref_sensitivity_analysis_model(proj_path: Path, proj_name: str, test: str,
+                                                        output_file_name: str, ref_power: float):
+    """
+    Connect to a PSCAD project configured for voltage reference step tests
+    under DC voltage control mode.
+
+    This function:
+    - Loads the PSCAD project
+    - Configures the MMC in DC voltage control mode
+    - Applies grid conditions based on SCR and X/R ratio
+    - Sets the voltage reference step input
+    - Sets the initial active power reference
+    - Extracts required DC-side components (R, L, C)
+
+    Parameters:
+        proj_path        : Path to PSCAD project file
+        proj_name        : Name of the project inside PSCAD
+        test             : Type of voltage step ("u_ref_step_up" or "u_ref_step_down")
+        output_file_name : Name for PSCAD output file
+        ref_power        : Initial steady-state active power reference
+
+    Returns:
+        proj        : Configured PSCAD project object
+        components  : Dictionary containing R, L, and C component handles
+    """
+
+    # Initialize PSCAD application and load the project
+    app = mhi.pscad.application()
+    app.settings(fortran_version="GFortran 4.6.2")  # Ensure compatible compiler
+    app.load(str(proj_path))
+
+    # Access and focus on the specified project
+    proj = app.project(proj_name)
+    proj.focus()
+
+    # Define output file for simulation results
+    proj.parameters(output_filename=f"{output_file_name}.out")
+
+    # Access main simulation canvas
+    canvas = proj.canvas("Main")
+
+    # Mapping between PSCAD component names and internal keys
+    required = {"R_dc": "R", "L_dc": "L", "C_dc": "C", "AC_Grid": "AC", "ALA MMC": "mmc"}
     components = {}
 
     # Iterate through all components in the model
@@ -467,8 +585,8 @@ def connect_step_power_ref_model(proj_path: Path, proj_name: str, test: str,
 
     # Set power ramp rate (MW/s)
     ratelimit = proj.component(150450347)
-    ratelimit.parameters(IR=f"{ramp_rate} [1/s]",)
-    ratelimit.parameters(DR=f"{ramp_rate} [1/s]",)
+    ratelimit.parameters(IR=f"{ramp_rate} [1/s]", )
+    ratelimit.parameters(DR=f"{ramp_rate} [1/s]", )
 
     # Compute grid equivalent impedance from SCR and X/R ratio
     lg, rg = apply_scr_and_xr(scr=SCR, xr=X_R)
