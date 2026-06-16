@@ -1,0 +1,18 @@
+step_voltage_dist:
+  model: ../pscad_model/MMC_step_voltage_disturbance.pscx
+  name: MMC_step_voltage_disturbance
+  mva: 1200
+  fn: 50
+  initial_power: 0
+  step_power: -200
+  voltage_reference: 640.
+  voltage_step: 652.8
+  SCR: 10
+  XR: 10
+  components:
+    mmc_id: 1004889451
+    ac_grid_id: 1350091687
+  results:
+    file_name: step_p_ref_response
+    result_file: ../pscad_model/MMC_step_voltage_disturbance.gf46
+    save_path: ../output/simulation_results/step_up_voltage_dist_response

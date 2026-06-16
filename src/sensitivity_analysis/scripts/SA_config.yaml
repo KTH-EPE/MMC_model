@@ -1,0 +1,24 @@
+step_voltage_ref:
+  model: ../../mmc_sim/tests/step_voltage_reference/pscad_model/MMC_step_voltage_reference.pscx
+  name: MMC_step_voltage_reference
+  mva: 1200
+  fn: 50
+  ref_power: 900
+  step_up_voltage: 652.8
+  step_down_voltage: 627.2
+  ramp_rate: 500
+  SCR: 10
+  XR: 10
+  test: u_ref_step_up
+  components:
+    mmc_id: 171519397
+    ac_grid_id: 13902648
+  results:
+    file_name: step_u_ref_response
+    result_file: ../../mmc_sim/tests/step_voltage_reference/pscad_model/MMC_step_voltage_reference.gf46
+    save_path: ../output/sensitivity_analysis/simulation_results/step_up_voltage_ref_response
+
+sensitivity_analysis:
+  output:
+    sample_data: ../output/sensitivity_analysis/sample_data/sample_data.csv
+    sim_data: ../output/sensitivity_analysis/sample_data/sim_results_summary.csv

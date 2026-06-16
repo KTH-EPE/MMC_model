@@ -26,25 +26,59 @@ The goal is to enable **reproducible, large-scale simulation studies** for HVDC 
 ```text
 MMC_model/
 │
-├── output/                        # All simulation outputs
-│
-├── pscad_model/                   # PSCAD project files
-│
-├── result_analysis/               # Post-processing & plotting scripts
-│
-│── src/                           # (Optional) reusable source modules
-│   simulation_scripts/                     # Main simulation scripts
-│   ├── config.yaml                # Experiment configuration file
-│   ├── methods.py                 # Core PSCAD interface & utilities
-│   │
-│   ├── power_disturbance_step_response.py
-│   ├── power_reference_step_response.py
-│   ├── voltage_disturbance_step_response.py
-    ├── voltage_reference_step_response.py
-    ├── sensitivity_analysis_input_data_generator.py
-    ├── sensitivity_analysis_voltage_step_ref_response.py
-│   └── voltage_reference_step_response_fpr_sensitivity_analysis.py
-│
+├── src/
+│   └── mmc_sim/
+│       │
+│       ├── __init__.py
+│       │
+│       ├── core/
+│       │   ├── __init__.py
+│       │   ├── config.py
+│       │   ├── pscad.py
+│       │   ├── logger.py
+│       │   ├── parameter_sweep.py
+│       │   ├── config_components.py
+│       │   ├── misc.py
+│       │   └── simulation.py
+│       │
+│       ├── tests/
+│       │   ├── step_voltage_referemce/
+│       │   │   ├── pscad_model/
+│       │   │   ├── output/
+│       │   │   └── scripts/
+│       │   │       ├── config.yaml
+│       │   │       ├── run_step_voltage_reference_response.py
+│       │   │       └── svr_methods.py
+│       │   ├── step_power_referemce/
+│       │   │   ├── pscad_model/
+│       │   │   ├── output/
+│       │   │   └── scripts/
+│       │   │       ├── config.yaml
+│       │   │       ├── run_step_power_reference_response.py
+│       │   │       └── spr_methods.py
+│       │   ├── step_voltage_disturbance/
+│       │   │   ├── pscad_model/
+│       │   │   ├── output/
+│       │   │   └── scripts/
+│       │   │       ├── config.yaml
+│       │   │       ├── run_step_voltage_disturbance_response.py
+│       │   │       └── svd_methods.py
+│       │   ├── step_power_disturbance/
+│       │   │   ├── pscad_model/
+│       │   │   ├── output/
+│       │   │   └── scripts/
+│       │   │       ├── config.yaml
+│       │   │       ├── run_step_power_disturbance_response.py
+│       │   │       └── spd_methods.py
+│       │   └── output/
+│       └── sensitivity_analysis/
+│           ├── scripts/
+│           │   ├── SA_config.yaml
+│           │   ├── SA_input_data_generator.py
+│           │   ├── SA_methods.py
+│           │   ├── step_voltage_reference_response_sim_for_SA.py
+│           │   └── SA_step_voltage_reference_response.py
+│           └── output/
 ├── poetry.lock                    # Locked dependencies (Poetry)
 ├── pyproject.toml                 # Project configuration & dependencies
 └── README.md                      # Project documentation
@@ -53,15 +87,15 @@ MMC_model/
 ---
 ## 3. Experiment Types
 - N.B: Manually launch PSCAD before initiating any test
-### 3.1 Voltage Disturbance Response
-- File: `voltage_disturbance_step_response.py`
+### 3.1 Step Voltage Disturbance Response
+- File: `run_step_voltage_disturbance_response.py`
 - Purpose: To assess the open-loop quasi-static behavior of active power response to changes in DC voltage
 - Control mode: Voltage droop control (`idmode = 2`)
 - In the `config.py` file, set `test: u_step_up` or `test: u_step_down`
 ---
 
-### 3.2 Power Disturbance Response
-- File: `power_disturbance_step_response.py`
+### 3.2 Step Power Disturbance Response
+- File: `run_step_power_disturbance_response.py`
 - Purpose: 
   - To evaluate the closed-loop dynamics of the device under test (DUT) under various possible operational conditions. 
   - To assess whether the DUT possesses sufficient disturbance rejection capability to handle worst- case disturbances.
@@ -69,15 +103,15 @@ MMC_model/
 - In the `config.py` file, set `test: p_step_up` or `test: p_step_down`
 ---
 
-### 3.3 Voltage Reference Step Response
-- File: `voltage_reference_step_response.py`
+### 3.3 Step Voltage Reference Response
+- File: `run_step_voltage_reference_response.py`
 - Purpose: To ensure the capability of the AC/DC converter unit to adhere to the DC voltage set-point at its DC-PoC at steady state
 - Control mode: DC voltage control (`idmode = 0`)
 - In the `config.py` file, set `test: u_ref_step_up` or `test: u_ref_step_down`
 ---
 
-### 3.4 Power Reference Step Response
-- File: `power_reference_step_response.py`
+### 3.4 Step Power Reference Response
+- File: `run_step_power_reference_response.py`
 - Purpose: Analyze active power tracking performance under reference changes
 - Control mode: Active power control (`idmode = 1`)
 - In the `config.py` file, set `test: p_ref_step_up` or `test: p_ref_step_down`
@@ -85,10 +119,10 @@ MMC_model/
 
 ### 3.5 Sensitivity analysis
 - Sensitivity analysis assess the impact of the DC and AC grid parameters on control response.
-- File: `sensitivity_analysis_input_data_generator.py` generates sample data
-- File: `voltage_reference_step_response_for_sensitivity_analysis.py` performs EMT simulations in PSCAD using the sample data.
+- File: `SA_input_data_generator.py` generates sample data
+- File: `step_voltage_reference_response_sim_for_SA.py` performs EMT simulations in PSCAD using the sample data.
 - The KPI's from the EMT simulations are processed using file: `step_voltage_ref_response_result_analysis.ipynb` in the result analysis directory.
-- Sobol sensitivity analysis is then performed using a surrogate PCE model with file: `sensitivity_analysis_voltage_step_ref_response.py`.
+- Sobol sensitivity analysis is then performed using a surrogate PCE model with file: `SA_step_voltage_ref_response.py`.
 ---
 
 ## 4. Parameter Sweeps
@@ -103,7 +137,7 @@ All experiments support automated parameter sweeps over:
 ### Sweep structure
 - Full Cartesian product of selected parameter ranges
 - Each simulation is executed independently
-- Results are stored with structured filenames
+- Results are stored with structured file names
 
 Example:
 ```
@@ -121,26 +155,12 @@ Easy modification of test cases
 Separation of code and experiment setup
 ---
 
-## 6. Core Workflow
-
-Each script follows the same structure:
-- Step 1 — Connect to PSCAD
-  - Load project
-  - Set control mode
-  - Configure grid impedance (SCR, X/R)
-- Step 2 — Configure scenario
-  - Set reference values (power or voltage)
-  - Define disturbance type (step up/down)
-- Step 3 — Run simulation
-  - Execute PSCAD simulation
-  - Export .out file
-- Step 4 — Post-process
-  - Convert results to CSV
-  - Rename and store systematically
-- Step 5 — Parameter sweep (optional)
-  - Iterate over L, R, C combinations
-  - Store results in structured dataset
-
+## 6. Important!
+Given the automation constraints in PSCAD,
+- The DC grid RLC requivalent parameters should be named R_dc, L_dc, C_dc for the resistor, inductor, and capacitor respectively.
+- Real constants in PSCAD for the power references should be named Pref_init, and P_ref_step for initial power and final power after step respectively.
+- Real constants in PSCAD for the voltage reference should be named "uref" and the final voltage after step, "u_step".
+- The source code should be adapted accordingly for different choices of parameter/component names.
 ---
 
 ## 7. Requirements & Installation
@@ -165,7 +185,7 @@ Then install all dependencies:
 
 Activate the environment:
 
-`poetry env activate`
+`.venv\Scripts\activate`
 
 Run the tests in "mmc_tests" as desired
 

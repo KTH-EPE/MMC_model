@@ -1,0 +1,17 @@
+step_voltage_ref:
+  model: ../pscad_model/MMC_step_voltage_reference.pscx
+  name: MMC_step_voltage_reference
+  mva: 1200
+  fn: 50
+  ref_power: 900
+  voltage_step: 652.8
+  voltage_reference: 640.
+  SCR: 10
+  XR: 10
+  components:
+    mmc_id: 171519397
+    ac_grid_id: 13902648
+  results:
+    file_name: step_u_ref_response
+    result_file: ../pscad_model/MMC_step_voltage_reference.gf46
+    save_path: ../output/simulation_results/step_up_voltage_ref_response

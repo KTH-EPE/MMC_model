@@ -1,0 +1,18 @@
+step_power_ref:
+  model: ../pscad_model/MMC_step_power_reference.pscx
+  name: MMC_step_power_reference
+  mva: 1200
+  fn: 50
+  initial_power: -880
+  final_power: -1000
+  ramp_rate: 500
+  SCR: 10
+  XR: 10
+  components:
+    mmc_id: 1382517697
+    rate_limiter_id: 150450347
+    ac_grid_id: 2126013019
+  results:
+    file_name: step_p_ref_response
+    result_file: ../pscad_model/MMC_step_power_reference.gf46
+    save_path: ../output/simulation_results/step_up_power_ref_response
