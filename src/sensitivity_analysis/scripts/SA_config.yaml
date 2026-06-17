@@ -4,12 +4,11 @@ step_voltage_ref:
   mva: 1200
   fn: 50
   ref_power: 900
-  step_up_voltage: 652.8
-  step_down_voltage: 627.2
-  ramp_rate: 500
+  step_voltage: 652.8
+  reference_voltage: 640.
   SCR: 10
   XR: 10
-  test: u_ref_step_up
+  ac_voltage: 400.
   components:
     mmc_id: 171519397
     ac_grid_id: 13902648
@@ -21,4 +20,5 @@ step_voltage_ref:
 sensitivity_analysis:
   output:
     sample_data: ../output/sensitivity_analysis/sample_data/sample_data.csv
+    sample_data_dir: ../output/sensitivity_analysis/sample_data
     sim_data: ../output/sensitivity_analysis/sample_data/sim_results_summary.csv

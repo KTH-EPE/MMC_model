@@ -28,7 +28,7 @@ The goal is to enable **reproducible, large-scale simulation studies** for HVDC 
 
 ## 2. Project Structure
 ```text
-MMC_model/
+MMC_Verification_Framework/
 │
 ├── src/
 │   └── mmc_sim/

@@ -4,8 +4,8 @@ step_voltage_ref:
   mva: 1200
   fn: 50
   ref_power: 900
-  voltage_step: 652.8
-  voltage_reference: 640.
+  step_voltage: 652.8
+  reference_voltage: 640.
   SCR: 10
   XR: 10
   ac_voltage: 400.

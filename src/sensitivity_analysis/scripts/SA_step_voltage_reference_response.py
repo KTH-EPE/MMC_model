@@ -1,5 +1,7 @@
 """
 Polynomial Chaos Expansion based sensitivity analysis.
+This analysis is implemented based on a pre-defined uncertainty parameter distribution based on the sample data problem.
+See `create_distribution()' in `sa_methods.py`. It should be updated to match the sample data problem.
 """
 
 from sklearn.model_selection import train_test_split
@@ -24,7 +26,7 @@ def run_analysis(config_file):
     metrics = evaluate_model(model, X_train, X_test, Y_train, Y_test)
 
     sobol = calculate_sobol_indices(model, distribution)
-    logger.info(f"Accuracy: {metrics}")
+    pce_logger.info(f"Accuracy: {metrics}")
     return {
         "model": model,
         "metrics": metrics,

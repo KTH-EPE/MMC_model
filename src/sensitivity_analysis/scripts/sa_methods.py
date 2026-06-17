@@ -1,15 +1,22 @@
-import math
-from pathlib import Path
 import yaml
 import numpy as np
-import pandas as pd
 import chaospy as cp
 from sklearn.metrics import r2_score
 from SALib.sample.latin import sample
+import pandas as pd
 
+from src.mmc_sim.tests.step_voltage_reference.scripts.svr_methods import *
 from src.mmc_sim.core.logger import setup_logger
 
-logger = setup_logger("pce_analysis")
+
+CONFIG_FILE = Path(".\\SA_config.yaml")
+
+emt_sim_logger = setup_logger(
+    "simulation"
+)
+
+
+pce_logger = setup_logger("pce_analysis")
 
 
 def load_config(config_file: Path):
@@ -79,7 +86,7 @@ def generate_samples(number_of_samples: int, random_seed: int = None):
     """
 
     problem = define_sampling_problem()
-    logger.info(f"Generating {number_of_samples} samples")
+    pce_logger.info(f"Generating {number_of_samples} samples")
     samples = sample(problem, number_of_samples, seed=random_seed)
     dataframe = pd.DataFrame(samples, columns=problem["names"])
     dataframe = calculate_grid_parameters(dataframe)
@@ -94,7 +101,7 @@ def save_samples(dataframe: pd.DataFrame, output_directory: Path, filename="samp
 
     output_directory.mkdir(parents=True, exist_ok=True)
     output_file = (output_directory / filename)
-    dataframe.round(6).to_csv(output_file, index=False)
+    dataframe.round(3).to_csv(output_file, index=False)
     return output_file
 
 
@@ -115,7 +122,7 @@ def load_dataset(sample_file: Path, result_file: Path):
     DataFrame
         Prepared input-output dataset.
     """
-    logger.info("Loading sample and simulation data")
+    pce_logger.info("Loading sample and simulation data")
     samples = pd.read_csv(sample_file)
     results = pd.read_csv(result_file)
 
@@ -131,7 +138,7 @@ def load_dataset(sample_file: Path, result_file: Path):
 
     # Convert mH to H
     dataset["L"] /= 1000
-    logger.info(f"Dataset size: {dataset.shape}")
+    pce_logger.info(f"Dataset size: {dataset.shape}")
     return dataset
 
 
@@ -153,7 +160,7 @@ def train_pce(X_train, Y_train, order, distribution):
     """
     Train polynomial chaos expansion surrogate.
     """
-    logger.info(f"Training PCE order={order}")
+    pce_logger.info(f"Training PCE order={order}")
     expansion = cp.generate_expansion(order, distribution)
     model = cp.fit_regression(expansion, X_train.T, Y_train)
     return model
@@ -180,9 +187,61 @@ def calculate_sobol_indices(model, distribution):
     """
     Calculate Sobol sensitivity indices.
     """
-    logger.info("Calculating Sobol indices")
+    pce_logger.info("Calculating Sobol indices")
     return {
         "first_order": cp.Sens_m(model, distribution),
         "second_order": cp.Sens_m2(model, distribution),
         "total": cp.Sens_t(model, distribution)
     }
+
+
+def sample_data_emt_run(sample_data_path: str):
+    cfg = load_configuration(CONFIG_FILE)
+
+    model = PSCADModel(
+        cfg["project_path"],
+        cfg["project_name"],
+    )
+
+    project = model.get_project()
+
+    project.component(cfg["mmc_id"]).parameters(idmode="0")
+
+    configure_ac_grid(
+        project,
+        cfg["ac_grid_id"],
+        cfg["scr"],
+        cfg["xr"],
+        cfg["mva"],
+        cfg["fn"],
+        cfg["ac_voltage"],
+    )
+
+    model.set_output(cfg["output_file"])
+
+    canvas_components = model.canvas_components()
+
+    set_power_and_voltage_values(
+        canvas_components,
+        cfg["ref_power"],
+        cfg["uref"],
+        cfg["u_step"]
+    )
+
+    dc_grid_components = find_dc_components(canvas_components)
+    dc_network = ConfigDCGridComponents(dc_grid_components)
+    sample_data_df = pd.read_csv(sample_data_path)
+    for _, row in sample_data_df.iterrows():
+        dc_grid_params = {"R": row["R"], "L": round(row["L"]/1000, 6), "C": row["C"]}  # inductance in H
+        dc_network.set_dc_network(
+            **dc_grid_params
+        )
+
+        simulation = Simulation(model)
+
+        emt_sim_logger.info(f"Running simulation for {dc_grid_params}")
+
+        result_df = simulation.run(cfg["result_file"])
+        new_file_name = format_rlc_filename(**dc_grid_params)
+        move_result_file(result_df, cfg["save_path"], new_file_name)
+    return

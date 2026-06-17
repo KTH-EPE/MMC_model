@@ -99,8 +99,8 @@ def load_configuration(config_file):
             f"{cfg.get(sim_cfg, 'results', 'file_name')}"
         ),
         "ref_power": cfg.get(sim_cfg, "ref_power"),
-        "uref": cfg.get(sim_cfg, "voltage_reference"),
-        "u_step": cfg.get(sim_cfg, "voltage_step"),
+        "uref": cfg.get(sim_cfg, "reference_voltage"),
+        "u_step": cfg.get(sim_cfg, "step_voltage"),
         "scr": cfg.get(sim_cfg, "SCR"),
         "xr": cfg.get(sim_cfg, "XR"),
         "ac_voltage": cfg.get(sim_cfg, "ac_voltage"),
