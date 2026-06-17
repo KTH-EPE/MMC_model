@@ -1,6 +1,10 @@
-# PSCAD Automated Simulation Framework
+# InterOPERA MMC Dynamic Test Verification Framework
 
-This repository provides an automated Python-based workflow for running and managing PSCAD simulations to assess the dynamic performance compliance of modular multi-level converters (MMCs) to the functional requirements stipulated in InterOPERA D2.1. The framework supports parameter sweeps with systematic data export and post-processing.
+This repository provides an automated Python-based workflow for running and managing PSCAD simulations to assess the 
+dynamic performance compliance of modular multi-level converters (MMCs) to the functional requirements stipulated in 
+InterOPERA D2.1. A methodology for performing sensitivity analysis based on the Sobol' algorithm with a surrogate model (Bayessian 
+Sparse Polynomial Chaos Expansion: BSPCE is also included.)
+The framework supports parameter sweeps with systematic data export and post-processing.
 
 ---
 
@@ -28,8 +32,6 @@ MMC_model/
 │
 ├── src/
 │   └── mmc_sim/
-│       │
-│       ├── __init__.py
 │       │
 │       ├── core/
 │       │   ├── __init__.py
@@ -63,14 +65,14 @@ MMC_model/
 │       │   │       ├── config.yaml
 │       │   │       ├── run_step_voltage_disturbance_response.py
 │       │   │       └── svd_methods.py
-│       │   ├── step_power_disturbance/
-│       │   │   ├── pscad_model/
-│       │   │   ├── output/
-│       │   │   └── scripts/
-│       │   │       ├── config.yaml
-│       │   │       ├── run_step_power_disturbance_response.py
-│       │   │       └── spd_methods.py
-│       │   └── output/
+│       │   └─── step_power_disturbance/
+│       │        ├── pscad_model/
+│       │        ├── output/
+│       │        └── scripts/
+│       │           ├── config.yaml
+│       │           ├── run_step_power_disturbance_response.py
+│       │           └── spd_methods.py
+│       │    
 │       └── sensitivity_analysis/
 │           ├── scripts/
 │           │   ├── SA_config.yaml
@@ -147,8 +149,8 @@ x_L400_C1300_R6_.csv
 
 ## 5. Configuration (config.yaml)
 
-All simulation settings are centralized in config.yaml.
-This ensures:
+The simulation settings are centralized in `config.yaml` with the file required to run the simulation needing minimal 
+updates. This ensures:
 
 Reproducibility
 Easy modification of test cases
@@ -158,9 +160,11 @@ Separation of code and experiment setup
 ## 6. Important!
 Given the automation constraints in PSCAD,
 - The DC grid RLC requivalent parameters should be named R_dc, L_dc, C_dc for the resistor, inductor, and capacitor respectively.
-- Real constants in PSCAD for the power references should be named Pref_init, and P_ref_step for initial power and final power after step respectively.
-- Real constants in PSCAD for the voltage reference should be named "uref" and the final voltage after step, "u_step".
-- The source code should be adapted accordingly for different choices of parameter/component names.
+- Real constants in PSCAD for the power references should be named Pref_init, and P_ref_step for the initial and final 
+power after a step respectively.
+- Real constants in PSCAD for the voltage reference should be named "uref" and the final voltage after a step, "u_step".
+- The source code should be adapted accordingly for different choices of parameter/component names and these parameters 
+should be accessible on the main canvas of PSCAD.
 ---
 
 ## 7. Requirements & Installation
@@ -188,6 +192,22 @@ Activate the environment:
 `.venv\Scripts\activate`
 
 Run the tests in "mmc_tests" as desired
+
+For sensitivity analysis, a different virtual environment is required due to conflicts in dependency versions.
+Change the directory to "sensitivity_analysis"
+
+`cd "MMC_model\\src\\sensitivity_analysis"`
+
+Activate the virtual environment
+
+`.venv\Scripts\activate`
+
+Run `poetry install` to install dependencies. Poetry should already be installed in your system.
+
+A numpy version < 2 should be installed. `Numpoly` should also be installed. In the event of issues, try 
+`pip install --only-binary=:all: numpoly` followed by the installation of chaospy (`pip install chaospy`).
+
+You'll then be ready to perform sensitivity analysis.
 
 ---
 
