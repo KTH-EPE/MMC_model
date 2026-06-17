@@ -31,7 +31,7 @@ The goal is to enable **reproducible, large-scale simulation studies** for HVDC 
 MMC_Verification_Framework/
 │
 ├── src/
-│   │── mmc_sim/
+│   ├── mmc_sim/
 │   │   │
 │   │   ├── core/
 │   │   │   ├── __init__.py
