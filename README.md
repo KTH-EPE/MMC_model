@@ -1,4 +1,4 @@
-# InterOPERA MMC Dynamic Test Verification Framework
+# InterOPERA MMC Dynamic Tests Verification Framework
 
 This repository provides an automated Python-based workflow for running and managing PSCAD simulations to assess the 
 dynamic performance compliance of modular multi-level converters (MMCs) to the functional requirements stipulated in 
