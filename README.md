@@ -31,56 +31,56 @@ The goal is to enable **reproducible, large-scale simulation studies** for HVDC 
 MMC_Verification_Framework/
 │
 ├── src/
-│   └── mmc_sim/
-│       │
-│       ├── core/
-│       │   ├── __init__.py
-│       │   ├── config.py
-│       │   ├── pscad.py
-│       │   ├── logger.py
-│       │   ├── parameter_sweep.py
-│       │   ├── config_components.py
-│       │   ├── misc.py
-│       │   └── simulation.py
-│       │
-│       ├── tests/
-│       │   ├── step_voltage_referemce/
-│       │   │   ├── pscad_model/
-│       │   │   ├── output/
-│       │   │   └── scripts/
-│       │   │       ├── config.yaml
-│       │   │       ├── run_step_voltage_reference_response.py
-│       │   │       └── svr_methods.py
-│       │   ├── step_power_referemce/
-│       │   │   ├── pscad_model/
-│       │   │   ├── output/
-│       │   │   └── scripts/
-│       │   │       ├── config.yaml
-│       │   │       ├── run_step_power_reference_response.py
-│       │   │       └── spr_methods.py
-│       │   ├── step_voltage_disturbance/
-│       │   │   ├── pscad_model/
-│       │   │   ├── output/
-│       │   │   └── scripts/
-│       │   │       ├── config.yaml
-│       │   │       ├── run_step_voltage_disturbance_response.py
-│       │   │       └── svd_methods.py
-│       │   └─── step_power_disturbance/
-│       │        ├── pscad_model/
-│       │        ├── output/
-│       │        └── scripts/
-│       │           ├── config.yaml
-│       │           ├── run_step_power_disturbance_response.py
-│       │           └── spd_methods.py
-│       │    
-│       └── sensitivity_analysis/
-│           ├── scripts/
-│           │   ├── SA_config.yaml
-│           │   ├── SA_input_data_generator.py
-│           │   ├── SA_methods.py
-│           │   ├── step_voltage_reference_response_sim_for_SA.py
-│           │   └── SA_step_voltage_reference_response.py
-│           └── output/
+│   │── mmc_sim/
+│   │   │
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   ├── pscad.py
+│   │   │   ├── logger.py
+│   │   │   ├── parameter_sweep.py
+│   │   │   ├── config_components.py
+│   │   │   ├── misc.py
+│   │   │   └── simulation.py
+│   │   │
+│   │   └── tests/
+│   │       ├── step_voltage_referemce/
+│   │       │   ├── pscad_model/
+│   │       │   ├── output/
+│   │       │   └── scripts/
+│   │       │       ├── config.yaml
+│   │       │       ├── run_step_voltage_reference_response.py
+│   │       │       └── svr_methods.py
+│   │       ├── step_power_referemce/
+│   │       │   ├── pscad_model/
+│   │       │   ├── output/
+│   │       │   └── scripts/
+│   │       │       ├── config.yaml
+│   │       │       ├── run_step_power_reference_response.py
+│   │       │       └── spr_methods.py
+│   │       ├── step_voltage_disturbance/
+│   │       │   ├── pscad_model/
+│   │       │   ├── output/
+│   │       │   └── scripts/
+│   │       │       ├── config.yaml
+│   │       │       ├── run_step_voltage_disturbance_response.py
+│   │       │       └── svd_methods.py
+│   │       └─── step_power_disturbance/
+│   │            ├── pscad_model/
+│   │            ├── output/
+│   │            └── scripts/
+│   │               ├── config.yaml
+│   │               ├── run_step_power_disturbance_response.py
+│   │               └── spd_methods.py
+│   │    
+│   └── sensitivity_analysis/
+│       ├── scripts/
+│       │   ├── SA_config.yaml
+│       │   ├── SA_input_data_generator.py
+│       │   ├── SA_methods.py
+│       │   ├── step_voltage_reference_response_sim_for_SA.py
+│       │   └── SA_step_voltage_reference_response.py
+│       └── output/
 ├── poetry.lock                    # Locked dependencies (Poetry)
 ├── pyproject.toml                 # Project configuration & dependencies
 └── README.md                      # Project documentation
