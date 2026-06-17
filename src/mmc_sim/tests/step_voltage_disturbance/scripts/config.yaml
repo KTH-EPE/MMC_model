@@ -4,11 +4,12 @@ step_voltage_dist:
   mva: 1200
   fn: 50
   initial_power: 0
-  step_power: -200
+  final_power: -200
   voltage_reference: 640.
   voltage_step: 652.8
   SCR: 10
   XR: 10
+  ac_voltage: 400.
   components:
     mmc_id: 1004889451
     ac_grid_id: 1350091687

@@ -8,6 +8,7 @@ step_power_ref:
   ramp_rate: 500
   SCR: 10
   XR: 10
+  ac_voltage: 400.
   components:
     mmc_id: 1382517697
     rate_limiter_id: 150450347

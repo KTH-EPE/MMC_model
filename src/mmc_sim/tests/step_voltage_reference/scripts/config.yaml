@@ -8,6 +8,7 @@ step_voltage_ref:
   voltage_reference: 640.
   SCR: 10
   XR: 10
+  ac_voltage: 400.
   components:
     mmc_id: 171519397
     ac_grid_id: 13902648

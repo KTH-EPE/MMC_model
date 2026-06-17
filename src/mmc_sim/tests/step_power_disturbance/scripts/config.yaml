@@ -3,6 +3,7 @@ power_dist_step:
   name: MMC_step_power_disturbance
   mva: 1200
   fn: 50
+  ac_voltage: 400
   initial_power: 600
   final_power: 1000
   SCR: 10
