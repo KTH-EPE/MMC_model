@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1781604577" />
+    <param name="revisor" value="geraldck, 1781698273" />
   </paramlist>
   <Layers />
   <List classid="Settings">
@@ -10723,6 +10723,168 @@
         <param name="ymax" value="1.000000" />
       </paramlist>
     </Settings>
+    <Settings classid="GraphFrameSettings" id="921109297" link="476389741">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1475514670" link="101394035">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2.000000" />
+        <param name="ymax" value="2.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1989815114" link="234962447">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="930062698" link="906708191">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2.000000" />
+        <param name="ymax" value="2.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1071631294" link="729248662">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1085550059" link="1958228945">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="2019939842" link="1621048160">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="2141315570" link="881792854">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1610096322" link="1130926913">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="576395513" link="80292689">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="497779299" link="1784913321">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="491698234" link="1069512920">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1616058553" link="991784323">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1374116908" link="1568579025">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1571979133" link="599549602">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1606690534" link="2053762445">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="948662148" link="826576286">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1539139990" link="1802484637">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
   </List>
   <bookmarks />
   <GlobalSubstitutions name="Default">
@@ -10781,7 +10943,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="123856786" view="false" date="1781604420">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="85338379" view="false" date="1781690982">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -10958,8 +11120,8 @@
         </User>
         <User classid="UserCmp" defn="master:const" id="2066770222" x="558" y="108" w="76" h="35" z="30" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
-            <param name="Name" value="uref0" />
-            <param name="Value" value="640" />
+            <param name="Name" value="uref" />
+            <param name="Value" value="640.0" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -10969,8 +11131,8 @@
         </Wire>
         <User classid="UserCmp" defn="master:const" id="399906310" x="576" y="72" w="76" h="35" z="10" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
-            <param name="Name" value="uref_new" />
-            <param name="Value" value="627.2" />
+            <param name="Name" value="u_step" />
+            <param name="Value" value="652.8" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -11103,7 +11265,7 @@
         </Wire>
         <User classid="UserCmp" name="master:inductor" id="1788236701" x="486" y="234" w="44" h="31" z="1" orient="6" defn="master:inductor" link="-1" q="4" disable="false" layer="">
           <paramlist link="-1" name="" crc="666653">
-            <param name="L" value="0.6" />
+            <param name="L" value="0.5" />
             <param name="Name" value="L_dc" />
           </paramlist>
         </User>
@@ -11581,7 +11743,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="20417841" instances="0" key="" view="false" date="1781604421" id="1971206267">
+    <Definition classid="UserCmpDefn" name="CONVERTER253" group="" url="" version="" build="" crc="20417841" instances="0" key="" view="false" date="1781690982" id="1971206267">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -12030,7 +12192,7 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2" group="" url="" version="" build="" crc="92410476" instances="0" key="" view="false" date="1781604422" id="1810561452">
+    <Definition classid="UserCmpDefn" name="P_Vdc_Droop_50_2" group="" url="" version="" build="" crc="92410476" instances="0" key="" view="false" date="1781690983" id="1810561452">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -13643,7 +13805,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_1_1_1" build="" crc="101011889" view="false" instances="0" date="1781604423" id="1721736909" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_1_1_1" build="" crc="101011889" view="false" instances="0" date="1781690984" id="1721736909" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -14442,7 +14604,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="MMC_2_1" build="" crc="30400670" view="false" instances="0" date="1781604423" id="230869669" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="MMC_2_1" build="" crc="30400670" view="false" instances="0" date="1781690984" id="230869669" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -15248,7 +15410,7 @@ Output]]></segment>
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="93047644" instances="0" key="" view="false" date="1781604422" id="1513137513">
+    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="93047644" instances="0" key="" view="false" date="1781690983" id="1513137513">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -16911,7 +17073,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_2" build="" crc="84226266" view="false" instances="0" date="1781604421" id="1751716882" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_2" build="" crc="84226266" view="false" instances="0" date="1781690982" id="1751716882" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -17447,7 +17609,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="PI_1" build="" crc="13641035" view="false" instances="0" date="1781604421" id="382219444" w="320" h="400">
+    <Definition classid="UserCmpDefn" name="PI_1" build="" crc="13641035" view="false" instances="0" date="1781690982" id="382219444" w="320" h="400">
       <paramlist>
         <param name="Description" value="" />
       </paramlist>
@@ -17874,7 +18036,7 @@ Output]]></segment>
         </User>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1" group="" url="" version="" build="" crc="6738611" instances="0" key="" view="false" date="1781604421" id="1725041163">
+    <Definition classid="UserCmpDefn" name="DC_Voltage_Controller_32_1" group="" url="" version="" build="" crc="6738611" instances="0" key="" view="false" date="1781690982" id="1725041163">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -19181,7 +19343,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="I_50_1" group="" url="" version="" build="" crc="93299847" instances="0" key="" view="false" date="1781604422" id="1163776308">
+    <Definition classid="UserCmpDefn" name="I_50_1" group="" url="" version="" build="" crc="93299847" instances="0" key="" view="false" date="1781690983" id="1163776308">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -21442,7 +21604,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="NSCC_22_2" group="" url="" version="" build="" crc="35429208" instances="0" key="" view="false" date="1781604423" id="1595649666">
+    <Definition classid="UserCmpDefn" name="NSCC_22_2" group="" url="" version="" build="" crc="35429208" instances="0" key="" view="false" date="1781690984" id="1595649666">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -23551,7 +23713,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="ICC_30_1" group="" url="" version="" build="" crc="125674017" instances="0" key="" view="false" date="1781604422" id="1127327098">
+    <Definition classid="UserCmpDefn" name="ICC_30_1" group="" url="" version="" build="" crc="125674017" instances="0" key="" view="false" date="1781690983" id="1127327098">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -25573,7 +25735,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5" group="" url="" version="" build="" crc="114809086" instances="0" key="" view="false" date="1781604423" id="1973368728">
+    <Definition classid="UserCmpDefn" name="Modulation_Calculation_36_5" group="" url="" version="" build="" crc="114809086" instances="0" key="" view="false" date="1781690984" id="1973368728">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -28491,7 +28653,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CCS_Controller19_1" group="" url="" version="" build="" crc="121880742" instances="0" key="" view="false" date="1781604423" id="516707653">
+    <Definition classid="UserCmpDefn" name="CCS_Controller19_1" group="" url="" version="" build="" crc="121880742" instances="0" key="" view="false" date="1781690984" id="516707653">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -30830,7 +30992,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="103884461" instances="0" key="" view="false" date="1781604422" id="1834307687">
+    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="103884461" instances="0" key="" view="false" date="1781690983" id="1834307687">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -32618,7 +32780,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="CONVERTER102_1" group="" url="" version="" build="" crc="33304330" instances="0" key="" view="false" date="1781604421" id="939738451">
+    <Definition classid="UserCmpDefn" name="CONVERTER102_1" group="" url="" version="" build="" crc="33304330" instances="0" key="" view="false" date="1781690982" id="939738451">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -38489,7 +38651,7 @@ Output]]></segment>
     </Resource>
   </List>
   <hierarchy>
-    <call link="1388974819" name="MMC_step_voltage_disturbance:DS" z="-1" view="false" instance="0">
+    <call link="111574447" name="MMC_step_voltage_disturbance:DS" z="-1" view="false" instance="0">
       <call link="866498961" name="MMC_step_voltage_disturbance:Main" z="-1" view="true" instance="0">
         <call link="1350091687" name="MMC_step_voltage_disturbance:CONVERTER253" z="100" view="false" instance="0" />
         <call link="1004889451" name="MMC_step_voltage_disturbance:CONVERTER102_1" z="170" view="false" instance="0">
