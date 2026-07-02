@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1782903183" />
+    <param name="revisor" value="geraldck, 1782978503" />
   </paramlist>
   <Layers />
   <List classid="Settings">
@@ -10965,7 +10965,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="42817735" view="false" date="1782900055">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="64354315" view="false" date="1782900055">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -11277,7 +11277,7 @@
         </User>
         <User classid="UserCmp" defn="master:resistor" id="1883069841" x="558" y="234" w="44" h="33" z="1" orient="0" link="-1" q="4" disable="false" name="" layer="">
           <paramlist link="-1" name="" crc="10119665">
-            <param name="R" value="6" />
+            <param name="R" value="7" />
             <param name="Name" value="R_dc" />
           </paramlist>
         </User>
@@ -11287,7 +11287,7 @@
         </Wire>
         <User classid="UserCmp" name="master:inductor" id="1788236701" x="486" y="234" w="44" h="31" z="1" orient="6" defn="master:inductor" link="-1" q="4" disable="false" layer="">
           <paramlist link="-1" name="" crc="666653">
-            <param name="L" value="0.5" />
+            <param name="L" value="0.4" />
             <param name="Name" value="L_dc" />
           </paramlist>
         </User>
@@ -15770,7 +15770,7 @@ Output]]></segment>
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="92227040" instances="0" key="" view="false" date="1782900514" id="1513137513">
+    <Definition classid="UserCmpDefn" name="Reactive_Power_Controller_31_1" group="" url="" version="" build="" crc="107017720" instances="0" key="" view="false" date="1782900514" id="1513137513">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -16220,7 +16220,7 @@ Output]]></segment>
             <param name="Name" value="TQ" />
             <param name="Group" value="" />
             <param name="Display" value="1" />
-            <param name="Max" value="1" />
+            <param name="Max" value="10" />
             <param name="Min" value="0.0" />
             <param name="Value" value="6.5" />
             <param name="Units" value="" />
@@ -30728,7 +30728,7 @@ Output]]></segment>
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="81325391" instances="0" key="" view="false" date="1782900159" id="1834307687">
+    <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="81325391" instances="0" key="" view="false" date="1782978421" id="1834307687">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -37224,7 +37224,7 @@ Output]]></segment>
     </Resource>
   </List>
   <hierarchy>
-    <call link="1766556474" name="MMC_step_voltage_disturbance:DS" z="-1" view="false" instance="0">
+    <call link="253399118" name="MMC_step_voltage_disturbance:DS" z="-1" view="false" instance="0">
       <call link="866498961" name="MMC_step_voltage_disturbance:Main" z="-1" view="true" instance="0">
         <call link="1350091687" name="MMC_step_voltage_disturbance:CONVERTER253" z="100" view="false" instance="0" />
         <call link="1004889451" name="MMC_step_voltage_disturbance:CONVERTER102_1" z="170" view="false" instance="0">
