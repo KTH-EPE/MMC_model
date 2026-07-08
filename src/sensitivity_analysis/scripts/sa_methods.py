@@ -242,7 +242,7 @@ def sample_data_emt_run(sample_data_path: str, plot_results: bool = False):
         emt_sim_logger.info(f"Running simulation for {dc_grid_params}")
 
         result_df = simulation.run(cfg["result_file"])
-        new_file_name = format_rlc_filename(**dc_grid_params)
+        new_file_name = format_rlc_filename(**dc_grid_params, file_name=cfg["output_file"])
         move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
         if cfg["u_step"] > cfg["uref"]:
             result_summary = analyse_step_up_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,

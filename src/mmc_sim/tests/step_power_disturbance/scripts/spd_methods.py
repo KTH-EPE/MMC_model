@@ -156,7 +156,7 @@ def single_run(rlc_params: dict):
     logger.info(f"Running simulation for {rlc_params}")
     simulation = Simulation(model)
     result_df = simulation.run(cfg["result_file"])
-    new_file_name = format_rlc_filename(**rlc_params)
+    new_file_name = format_rlc_filename(**rlc_params, file_name=cfg["output_file"])
     move_result_file(result_df, cfg["save_path"], new_file_name)
     return
 
@@ -210,6 +210,6 @@ def parameter_sweep_run(rlc_params: dict):
         simulation = Simulation(model)
         logger.info(f"Running simulation for {params}")
         result_df = simulation.run(cfg["result_file"])
-        new_file_name = format_rlc_filename(**params)
+        new_file_name = format_rlc_filename(**params, file_name=cfg["output_file"])
         move_result_file(result_df, cfg["save_path"], new_file_name)
     return

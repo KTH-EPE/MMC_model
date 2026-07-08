@@ -177,7 +177,7 @@ def single_run(rl_params: Dict[str, float]):
 
     simulation = Simulation(model)
     result_df = simulation.run(cfg["result_file"])
-    new_file_name = format_rl_filename(**rl_params)
+    new_file_name = format_rl_filename(**rl_params, file_name=cfg["output_file"])
     move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
     summary_df = summarise_results(cfg["save_path"] / "sim_timeseries" / new_file_name, cfg["step_time"],
                                    cfg["final_power"], cfg["mva"])
@@ -241,7 +241,7 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
         simulation = Simulation(model)
         logger.info(f"Running simulation for {params}")
         result_df = simulation.run(cfg["result_file"])
-        new_file_name = format_rl_filename(**params)
+        new_file_name = format_rl_filename(**params, file_name=cfg["output_file"])
         move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
         summary_df = summarise_results(cfg["save_path"] / "sim_timeseries" / new_file_name, cfg["step_time"],
                                        cfg["final_power"], cfg["mva"])

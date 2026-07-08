@@ -166,7 +166,7 @@ def single_run(rl_params: Dict[str, float], plot_results: bool = True):
     logger.info(f"Running simulation for {rl_params}")
     simulation = Simulation(model)
     result_df = simulation.run(cfg["result_file"])
-    new_file_name = format_rl_filename(**rl_params)
+    new_file_name = format_rl_filename(**rl_params, file_name=cfg["output_file"])
     move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
     result_summary, timeseries_df = analyse_step_response(cfg["save_path"] / "sim_timeseries" / new_file_name,
                                                           cfg["final_power"], step_time=cfg["step_time"])
@@ -175,7 +175,7 @@ def single_run(rl_params: Dict[str, float], plot_results: bool = True):
     result_summary.to_csv(summary_path)
     if plot_results:
         result_fig = plot_step_response(timeseries_df, cfg["step_time"], result_summary)
-        fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).name + ".pdf")
+        fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).stem + ".pdf")
         fig_path.parent.mkdir(parents=True, exist_ok=True)
         result_fig.savefig(fig_path)
     return
@@ -231,7 +231,7 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]], plot_results: bool = 
         simulation = Simulation(model)
         logger.info(f"Running simulation for {params}")
         result_df = simulation.run(cfg["result_file"])
-        new_file_name = format_rl_filename(**params)
+        new_file_name = format_rl_filename(**params, file_name=cfg["output_file"])
         move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
         result_summary, timeseries_df = analyse_step_response(cfg["save_path"] / "sim_timeseries" / new_file_name,
                                                               cfg["final_power"], step_time=cfg["step_time"])
@@ -240,7 +240,7 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]], plot_results: bool = 
         result_summary.to_csv(summary_path)
         if plot_results:
             result_fig = plot_step_response(timeseries_df, cfg["step_time"], result_summary)
-            fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).name + ".pdf")
+            fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).stem + ".pdf")
             fig_path.parent.mkdir(parents=True, exist_ok=True)
             result_fig.savefig(fig_path)
     return
@@ -271,7 +271,7 @@ def analyse_step_response(res_file: str, pref: float, signal_name: str = "Pac", 
 
     p_df = pd.read_csv(res_file)
 
-    filename = os.path.basename(res_file)
+    filename = Path(res_file).stem
 
     R = float(filename.split("_")[-2][1:])
     H = float(filename.split("_")[-3][1:])
@@ -340,7 +340,7 @@ def plot_step_response(
         t50,
         linestyle="--",
         linewidth=1.2,
-        label="50% response",
+        label="50% provision",
         color="salmon"
     )
 
@@ -348,7 +348,7 @@ def plot_step_response(
         t90,
         linestyle="--",
         linewidth=1.2,
-        label="90% response",
+        label="90% provision",
         color="red"
     )
 
