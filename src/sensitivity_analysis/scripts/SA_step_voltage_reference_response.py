@@ -10,7 +10,7 @@ from sa_methods import *
 
 # Main analysis pipeline
 def run_analysis(config_file):
-    cfg = load_config(config_file)
+    cfg = load_config_file(config_file)
     sample_data = Path(cfg["sensitivity_analysis"]["output"]["sample_data"])
     sim_summary_data = Path(cfg["sensitivity_analysis"]["output"]["sim_data"])
     dataset = load_dataset(sample_data, sim_summary_data)
@@ -19,7 +19,7 @@ def run_analysis(config_file):
     X = dataset[["L", "C", "R", "SCR", "XR"]].values
 
     # Output response
-    Y = dataset["Xm"].values  # or "Tcr", "Tcs"
+    Y = dataset["Tcr"].values  # "Tcr", "Tcs", "Xm"
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=13)
     distribution = create_distribution()
     model = train_pce(X_train, Y_train, order=3, distribution=distribution)

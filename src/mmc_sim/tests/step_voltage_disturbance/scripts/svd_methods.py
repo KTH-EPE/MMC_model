@@ -1,4 +1,7 @@
 import math
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
 from typing import Dict, List
 
 from src.mmc_sim.core.config import Config
@@ -8,7 +11,6 @@ from src.mmc_sim.core.simulation import Simulation
 from src.mmc_sim.core.parameter_sweep import ParameterSweep
 from src.mmc_sim.core.misc import *
 from src.mmc_sim.core.logger import setup_logger
-
 
 CONFIG_FILE = Path("config.yaml")
 
@@ -40,7 +42,7 @@ def configure_ac_grid(project, component_id: str, scr: float, xr: float, mva: fl
     grid.parameters(Rg=rg, Lg=lg)
 
 
-def configure_power_and_voltage_values(components, initial_power, step_power, uref, u_step):
+def configure_power_and_voltage_values(components, initial_power, step_power, uref, u_step, step_time):
     for comp in components:
         try:
             name = comp.parameters().get("Name")
@@ -56,6 +58,8 @@ def configure_power_and_voltage_values(components, initial_power, step_power, ur
             comp.parameters(Value=u_step)
         elif name == "uref":
             comp.parameters(Value=uref)
+        elif name == "step_obj":
+            comp.parameters(X=step_time)
 
 
 def find_dc_components(components):
@@ -95,6 +99,10 @@ def load_configuration(config_file):
         "project_name": cfg.get(sim_cfg, "name"),
         "mva": cfg.get(sim_cfg, "mva"),
         "fn": cfg.get(sim_cfg, "fn"),
+        "step_time": cfg.get(sim_cfg, "step_time"),
+        "sample_step": cfg.get(sim_cfg, "sample_step"),
+        "time_step": cfg.get(sim_cfg, "time_step"),
+        "time_duration": cfg.get(sim_cfg, "time_duration"),
         "output_file": cfg.get(sim_cfg, "results", "file_name"),
         "save_path": Path(cfg.get(sim_cfg, "results", "save_path")),
         "result_file": Path(
@@ -113,7 +121,7 @@ def load_configuration(config_file):
     }
 
 
-def single_run(rl_params: Dict[str, float]):
+def single_run(rl_params: Dict[str, float], plot_results: bool = True):
     cfg = load_configuration(CONFIG_FILE)
 
     model = PSCADModel(
@@ -124,6 +132,9 @@ def single_run(rl_params: Dict[str, float]):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="2")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_ac_grid(
         project,
@@ -144,7 +155,8 @@ def single_run(rl_params: Dict[str, float]):
         cfg["initial_power"],
         cfg["final_power"],
         cfg["uref"],
-        cfg["u_step"]
+        cfg["u_step"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
@@ -155,11 +167,21 @@ def single_run(rl_params: Dict[str, float]):
     simulation = Simulation(model)
     result_df = simulation.run(cfg["result_file"])
     new_file_name = format_rl_filename(**rl_params)
-    move_result_file(result_df, cfg["save_path"], new_file_name)
+    move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
+    result_summary, timeseries_df = analyse_step_response(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                                          cfg["final_power"], step_time=cfg["step_time"])
+    summary_path = cfg["save_path"] / "sim_summary" / new_file_name
+    summary_path.parent.mkdir(parents=True, exist_ok=True)
+    result_summary.to_csv(summary_path)
+    if plot_results:
+        result_fig = plot_step_response(timeseries_df, cfg["step_time"], result_summary)
+        fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).name + ".pdf")
+        fig_path.parent.mkdir(parents=True, exist_ok=True)
+        result_fig.savefig(fig_path)
     return
 
 
-def parameter_sweep_run(rl_params: Dict[str, List[float]]):
+def parameter_sweep_run(rl_params: Dict[str, List[float]], plot_results: bool = True):
     cfg = load_configuration(CONFIG_FILE)
 
     model = PSCADModel(
@@ -170,6 +192,9 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="2")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_ac_grid(
         project,
@@ -190,7 +215,8 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
         cfg["initial_power"],
         cfg["final_power"],
         cfg["uref"],
-        cfg["u_step"]
+        cfg["u_step"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
@@ -206,5 +232,135 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
         logger.info(f"Running simulation for {params}")
         result_df = simulation.run(cfg["result_file"])
         new_file_name = format_rl_filename(**params)
-        move_result_file(result_df, cfg["save_path"], new_file_name)
+        move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
+        result_summary, timeseries_df = analyse_step_response(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                                              cfg["final_power"], step_time=cfg["step_time"])
+        summary_path = cfg["save_path"] / "sim_summary" / new_file_name
+        summary_path.parent.mkdir(parents=True, exist_ok=True)
+        result_summary.to_csv(summary_path)
+        if plot_results:
+            result_fig = plot_step_response(timeseries_df, cfg["step_time"], result_summary)
+            fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).name + ".pdf")
+            fig_path.parent.mkdir(parents=True, exist_ok=True)
+            result_fig.savefig(fig_path)
     return
+
+
+def analyse_step_response(res_file: str, pref: float, signal_name: str = "Pac", step_time: float = 3.):
+    """
+    Analyse the active power step response.
+
+    Parameters
+    ----------
+    res_file : str
+        Path to the PSCAD result file.
+    pref : float
+        Final active power reference (MW).
+    signal_name: str
+        name of the ac power column in result dataframe
+    step_time: float
+        time for the application of a power step
+
+    Returns
+    -------
+    summary_df : pandas.DataFrame
+        One-row DataFrame containing the extracted metrics.
+    p_df : pandas.DataFrame
+        Full simulation results.
+    """
+
+    p_df = pd.read_csv(res_file)
+
+    filename = os.path.basename(res_file)
+
+    R = float(filename.split("_")[-2][1:])
+    H = float(filename.split("_")[-3][1:])
+
+    pac_col = p_df.loc[:, signal_name]
+    steady_state_point = p_df.index.get_loc(p_df.index[p_df["TIME"] >= (step_time - 0.3)][0])
+    search_region = pac_col.iloc[steady_state_point:]
+
+    p50_index = search_region[search_region >= 0.5 * abs(pref)].index[0]
+    p90_index = search_region[search_region >= 0.9 * abs(pref)].index[0]
+
+    t50 = round(p_df.loc[p50_index, "TIME"], 3)
+    t90 = round(p_df.loc[p90_index, "TIME"], 3)
+
+    summary_df = pd.DataFrame({
+        "H_mH": [H],
+        "R_ohms": [R],
+        "t50_s": [t50],
+        "t90_s": [t90],
+    })
+
+    return summary_df, p_df
+
+
+def plot_step_response(
+        p_df,
+        step_time,
+        summary_df,
+        signal_col="Pac",
+):
+    """
+    Plot the active power step response highlighting the 50% and 90% response times.
+
+    Parameters
+    ----------
+    p_df : pandas.DataFrame
+        Simulation results.
+    step_time : float
+        Time at which the power step is applied (s).
+    summary_df : pandas.DataFrame
+        Output from analyse_step_response().
+    signal_col : str, optional
+        Name of the signal to plot.
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        Figure containing the step response plot.
+    """
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+
+    time = p_df["TIME"]
+    signal = p_df[signal_col]
+
+    # Response times
+    t50 = summary_df.loc[0, "t50_s"]
+    t90 = summary_df.loc[0, "t90_s"]
+
+    # Plot window
+    mask = (time >= step_time - 0.5) & (time <= step_time + 0.5)
+
+    ax.plot(time, signal, label=signal_col)
+
+    ax.axvline(
+        t50,
+        linestyle="--",
+        linewidth=1.2,
+        label="50% response",
+        color="salmon"
+    )
+
+    ax.axvline(
+        t90,
+        linestyle="--",
+        linewidth=1.2,
+        label="90% response",
+        color="red"
+    )
+
+    ax.set_xlim(step_time - 0.2, step_time + 0.5)
+    ax.set_ylim(-2, signal.loc[mask].max() * 1.1)
+
+    ax.set_xlabel("Time (s)")
+    ax.set_ylabel("Pac (MW)")
+
+    ax.grid(True, linestyle="--")
+    ax.legend(loc="lower right")
+
+    fig.tight_layout()
+
+    return fig

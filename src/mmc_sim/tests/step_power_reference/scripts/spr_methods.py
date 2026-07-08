@@ -1,5 +1,6 @@
 import math
 from typing import Dict, List
+import pandas as pd
 
 from src.mmc_sim.core.config import Config
 from src.mmc_sim.core.pscad import PSCADModel
@@ -51,7 +52,7 @@ def configure_ac_grid(project, component_id: str, scr: float, xr: float, mva: fl
     grid.parameters(Rg=rg, Lg=lg)
 
 
-def configure_power_references(components, initial_power, final_power):
+def configure_power_references(components, initial_power, final_power, step_time):
     for comp in components:
         try:
             name = comp.parameters().get("Name")
@@ -63,6 +64,8 @@ def configure_power_references(components, initial_power, final_power):
 
         elif name == "Pref_step":
             comp.parameters(Value=final_power)
+        elif name == "step_obj":
+            comp.parameters(X=step_time)
 
 
 def find_dc_components(components):
@@ -102,6 +105,10 @@ def load_configuration(config_file):
         "project_name": cfg.get(sim_cfg, "name"),
         "mva": cfg.get(sim_cfg, "mva"),
         "fn": cfg.get(sim_cfg, "fn"),
+        "step_time": cfg.get(sim_cfg, "step_time"),
+        "sample_step": cfg.get(sim_cfg, "sample_step"),
+        "time_step": cfg.get(sim_cfg, "time_step"),
+        "time_duration": cfg.get(sim_cfg, "time_duration"),
         "output_file": cfg.get(sim_cfg, "results", "file_name"),
         "save_path": Path(cfg.get(sim_cfg, "results", "save_path")),
         "result_file": Path(
@@ -131,6 +138,9 @@ def single_run(rl_params: Dict[str, float]):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="1")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_rate_limiter(
         project,
@@ -155,7 +165,8 @@ def single_run(rl_params: Dict[str, float]):
     configure_power_references(
         canvas_components,
         cfg["initial_power"],
-        cfg["final_power"]
+        cfg["final_power"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
@@ -167,7 +178,12 @@ def single_run(rl_params: Dict[str, float]):
     simulation = Simulation(model)
     result_df = simulation.run(cfg["result_file"])
     new_file_name = format_rl_filename(**rl_params)
-    move_result_file(result_df, cfg["save_path"], new_file_name)
+    move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
+    summary_df = summarise_results(cfg["save_path"] / "sim_timeseries" / new_file_name, cfg["step_time"],
+                                   cfg["final_power"], cfg["mva"])
+    summary_path = cfg["save_path"] / "sim_summary" / new_file_name
+    summary_path.parent.mkdir(parents=True, exist_ok=True)
+    summary_df.to_csv(summary_path)
     return
 
 
@@ -182,6 +198,9 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="1")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_rate_limiter(
         project,
@@ -206,7 +225,8 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
     configure_power_references(
         canvas_components,
         cfg["initial_power"],
-        cfg["final_power"]
+        cfg["final_power"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
@@ -222,5 +242,53 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]]):
         logger.info(f"Running simulation for {params}")
         result_df = simulation.run(cfg["result_file"])
         new_file_name = format_rl_filename(**params)
-        move_result_file(result_df, cfg["save_path"], new_file_name)
+        move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
+        summary_df = summarise_results(cfg["save_path"] / "sim_timeseries" / new_file_name, cfg["step_time"],
+                                       cfg["final_power"], cfg["mva"])
+        summary_path = cfg["save_path"] / "sim_summary" / new_file_name
+        summary_path.parent.mkdir(parents=True, exist_ok=True)
+        summary_df.to_csv(summary_path)
     return
+
+
+def summarise_results(res_file: str, step_time: float, p_set: float, nominal_mva: float) -> pd.DataFrame:
+    """
+    Check the steady-state active power error following a power step.
+
+    Parameters
+    ----------
+    res_file : str
+        Path to the PSCAD result file.
+    step_time : float
+        Time at which the power step is applied (s).
+    p_set : float
+        Active power reference (MW).
+    nominal_mva : float
+        Converter rated power (MVA).
+
+    Returns
+    -------
+    pandas.DataFrame
+        One-row DataFrame containing the test results.
+    """
+
+    df = pd.read_csv(res_file)
+
+    filename = Path(res_file).stem
+    parts = filename.split("_")
+
+    H = float(parts[-3][1:])
+    R = float(parts[-2][1:])
+
+    # First sample 0.5 s after the step
+    steady_state_idx = df.index.get_loc(df.index[df["TIME"] >= (step_time + 0.5)][0])
+
+    p_ss = df["Pac"].iloc[steady_state_idx:].mean()
+    delta_p_ss = abs(abs(p_ss) - abs(p_set)) / nominal_mva
+
+    return pd.DataFrame({
+        "H_mH": [H],
+        "R_ohms": [R],
+        "Pss_pu": [round(p_ss, 3)],
+        "Delta_Pss": [round(delta_p_ss, 3)],
+    })

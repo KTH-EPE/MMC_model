@@ -1,13 +1,10 @@
 import yaml
-import numpy as np
 import chaospy as cp
 from sklearn.metrics import r2_score
 from SALib.sample.latin import sample
-import pandas as pd
 
 from src.mmc_sim.tests.step_voltage_reference.scripts.svr_methods import *
 from src.mmc_sim.core.logger import setup_logger
-
 
 CONFIG_FILE = Path(".\\SA_config.yaml")
 
@@ -15,11 +12,10 @@ emt_sim_logger = setup_logger(
     "simulation"
 )
 
-
 pce_logger = setup_logger("pce_analysis")
 
 
-def load_config(config_file: Path):
+def load_config_file(config_file: Path):
     """
     Load YAML configuration file.
     """
@@ -127,7 +123,7 @@ def load_dataset(sample_file: Path, result_file: Path):
     results = pd.read_csv(result_file)
 
     # Select required simulation outputs
-    results = results[["H_mH", "C_uF", "R_ohms", "Xm"]]
+    results = results[["H_mH", "C_uF", "R_ohms", "Xm", "Tcr", "Tcs"]]
     dataset = samples.merge(
         results,
         left_on=["L", "C", "R"],
@@ -148,11 +144,11 @@ def create_distribution():
     Define uncertain parameter distributions.
     """
     return cp.J(
-        cp.Uniform(0.4, 0.8),   # L
+        cp.Uniform(0.4, 0.8),  # L
         cp.Uniform(800, 2100),  # C
-        cp.Uniform(6, 10),      # R
-        cp.Uniform(5, 15),      # SCR
-        cp.Uniform(5, 20)       # XR
+        cp.Uniform(6, 10),  # R
+        cp.Uniform(5, 15),  # SCR
+        cp.Uniform(5, 20)  # XR
     )
 
 
@@ -195,7 +191,7 @@ def calculate_sobol_indices(model, distribution):
     }
 
 
-def sample_data_emt_run(sample_data_path: str):
+def sample_data_emt_run(sample_data_path: str, plot_results: bool = False):
     cfg = load_configuration(CONFIG_FILE)
 
     model = PSCADModel(
@@ -206,6 +202,9 @@ def sample_data_emt_run(sample_data_path: str):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="0")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_ac_grid(
         project,
@@ -225,14 +224,15 @@ def sample_data_emt_run(sample_data_path: str):
         canvas_components,
         cfg["ref_power"],
         cfg["uref"],
-        cfg["u_step"]
+        cfg["u_step"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
     dc_network = ConfigDCGridComponents(dc_grid_components)
     sample_data_df = pd.read_csv(sample_data_path)
     for _, row in sample_data_df.iterrows():
-        dc_grid_params = {"R": row["R"], "L": round(row["L"]/1000, 6), "C": row["C"]}  # inductance in H
+        dc_grid_params = {"R": row["R"], "L": round(row["L"] / 1000, 6), "C": row["C"]}  # inductance in H
         dc_network.set_dc_network(
             **dc_grid_params
         )
@@ -243,5 +243,23 @@ def sample_data_emt_run(sample_data_path: str):
 
         result_df = simulation.run(cfg["result_file"])
         new_file_name = format_rlc_filename(**dc_grid_params)
-        move_result_file(result_df, cfg["save_path"], new_file_name)
+        move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
+        if cfg["u_step"] > cfg["uref"]:
+            result_summary = analyse_step_up_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                                            step_time=cfg["step_time"], voltage_reference=cfg["uref"])
+            file_path = cfg["save_path"] / "sim_summary" / new_file_name
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            result_summary.to_csv(file_path)
+            if plot_results:
+                plot_step_up_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                            step_time=cfg["step_time"], voltage_reference=cfg["uref"])
+        elif cfg["u_step"] < cfg["uref"]:
+            result_summary = analyse_step_down_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                                              step_time=cfg["step_time"], voltage_reference=cfg["uref"])
+            file_path = cfg["save_path"] / "sim_summary" / new_file_name
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            result_summary.to_csv(file_path, index=False)
+            if plot_results:
+                plot_step_down_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                              step_time=cfg["step_time"], voltage_reference=cfg["uref"])
     return

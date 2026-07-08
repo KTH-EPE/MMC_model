@@ -1,7 +1,7 @@
 <project name="MMC_step_voltage_reference" version="5.0.2" schema="" Target="EMTDC">
   <paramlist name="Settings">
     <param name="creator" value="geraldck,1768206855" />
-    <param name="time_duration" value="5" />
+    <param name="time_duration" value="6" />
     <param name="time_step" value="10" />
     <param name="sample_step" value="100" />
     <param name="chatter_threshold" value=".001" />
@@ -24,7 +24,7 @@
     <param name="Check" value="0" />
     <param name="Debug" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="geraldck, 1783423078" />
+    <param name="revisor" value="geraldck, 1783524333" />
     <param name="fortran_version" value="$(DefaultCompilerKey)" />
     <param name="c_version" value="$(DefaultCKey)" />
     <param name="matlab_version" value="$(DefaultMatlabKey)" />
@@ -194,7 +194,7 @@
       </path>
       <paramlist>
         <param name="xmin" value="0.0" />
-        <param name="xmax" value="5.0" />
+        <param name="xmax" value="6.0" />
       </paramlist>
     </Settings>
     <Settings classid="OverlayGraphSettings" id="1332471841" link="101394035">
@@ -8758,7 +8758,7 @@
       </path>
       <paramlist>
         <param name="xmin" value="0.0" />
-        <param name="xmax" value="5.0" />
+        <param name="xmax" value="6.0" />
       </paramlist>
     </Settings>
     <Settings classid="OverlayGraphSettings" id="488923524" link="906708191">
@@ -8766,8 +8766,8 @@
         <ref link="866498961" />
       </path>
       <paramlist>
-        <param name="ymin" value="-3000.0" />
-        <param name="ymax" value="3000.0" />
+        <param name="ymin" value="-2500.0" />
+        <param name="ymax" value="2000.0" />
       </paramlist>
     </Settings>
     <Settings classid="GraphFrameSettings" id="290756639" link="599549602">
@@ -14846,6 +14846,186 @@
         <param name="active_1" value="true" />
       </paramlist>
     </Settings>
+    <Settings classid="GraphFrameSettings" id="8869528" link="476389741">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1230239808" link="101394035">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2.000000" />
+        <param name="ymax" value="2.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="2039781696" link="234962447">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="811027216" link="906708191">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2.000000" />
+        <param name="ymax" value="2.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="61922012" link="147187724">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1132607251" link="611801496">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="962540071" link="2060998748">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1992397732" link="1122205997">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1834906999" link="1200584904">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="317174219" link="2139754360">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="444595743" link="258307157">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1539017620" link="106144106">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1801700855" link="1240606416">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1484893235" link="827372903">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1584588283" link="2102805040">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="1589594825" link="1263845884">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2.000000" />
+        <param name="ymax" value="2.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="1641762721" link="253888805">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="800768044" link="1818773775">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
+    <Settings classid="GraphFrameSettings" id="835121756" link="1838821998">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-1" />
+        <param name="xmax" value="1" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="314360956" link="265118541">
+      <path>
+        <ref link="866498961" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-1.000000" />
+        <param name="ymax" value="1.000000" />
+      </paramlist>
+    </Settings>
   </List>
   <bookmarks />
   <GlobalSubstitutions name="Default">
@@ -15026,7 +15206,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="60137846" view="false" date="1783423007">
+    <Definition classid="UserCmpDefn" name="Main" id="1468968198" group="" url="" version="" build="" crc="49478758" view="false" date="1783512508">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -15237,7 +15417,7 @@
             <param name="Name" value="Idc" />
           </paramlist>
         </User>
-        <User classid="UserCmp" id="887450504" name="master:pgb" x="396" y="468" w="41" h="40" z="100" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="887450504" name="master:pgb" x="396" y="468" w="41" h="40" z="100" orient="0" defn="master:pgb" link="-1" q="4" disable="true">
           <paramlist name="" link="-1" crc="55341900">
             <param name="Name" value="Vac" />
             <param name="Group" value="" />
@@ -15328,14 +15508,14 @@
               <param name="ymin" value="-2.0" />
               <param name="ymax" value="2.0" />
             </paramlist>
-            <Curve classid="Curve" id="1774015090" name="Vac" link="887450504" color="0" bold="1" show="-1" mode="0" gradient="false" transparency="255" thresh="0.5" above="High" below="Low" style="0">
+            <Curve classid="Curve" id="1774015090" name="Vac" link="887450504" color="0" bold="0" show="-1" mode="0" gradient="false" transparency="255" thresh="0.5" above="High" below="Low" style="0">
               <path />
             </Curve>
           </Graph>
         </Frame>
         <User classid="UserCmp" defn="master:resistor" id="639742466" x="576" y="162" w="44" h="33" z="1" orient="0" link="-1" q="4" disable="false" name="" layer="">
           <paramlist link="-1" name="" crc="10119665">
-            <param name="R" value="7" />
+            <param name="R" value="6" />
             <param name="Name" value="R_dc" />
           </paramlist>
         </User>
@@ -15345,14 +15525,14 @@
             <param name="Name" value="C_dc" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:div" id="95293882" x="270" y="216" w="80" h="59" z="130" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:div" id="95293882" x="270" y="216" w="80" h="59" z="120" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="74852640">
             <param name="Dim" value="1" />
             <param name="Name" value="" />
             <param name="DPath" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" defn="master:src_ccin_1" id="1215727512" x="414" y="216" w="54" h="44" z="160" orient="1" link="-1" layer="" q="4" disable="false">
+        <User classid="UserCmp" defn="master:src_ccin_1" id="1215727512" x="414" y="216" w="54" h="44" z="150" orient="1" link="-1" layer="" q="4" disable="false">
           <paramlist link="-1" name="" crc="48079029">
             <param name="Name" value="Source 1_1" />
             <param name="Cntrl" value="1" />
@@ -15398,7 +15578,7 @@
           <vertex x="0" y="54" />
           <vertex x="36" y="54" />
         </Wire>
-        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER102_1" id="171519397" x="972" y="216" w="278" h="167" z="150" orient="4" defn="MMC_step_voltage_reference:CONVERTER102_1" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="MMC_step_voltage_reference:CONVERTER102_1" id="171519397" x="972" y="216" w="278" h="167" z="140" orient="4" defn="MMC_step_voltage_reference:CONVERTER102_1" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="33745635">
             <param name="Name" value="ALA MMC" />
             <param name="Vtr_1" value="400" />
@@ -15478,7 +15658,7 @@
         </User>
         <User classid="UserCmp" name="master:inductor" id="260208239" x="504" y="162" w="44" h="31" z="1" orient="6" defn="master:inductor" link="-1" q="4" disable="false" layer="">
           <paramlist link="-1" name="" crc="666653">
-            <param name="L" value="0.6" />
+            <param name="L" value="0.4" />
             <param name="Name" value="L_dc" />
           </paramlist>
         </User>
@@ -15513,7 +15693,7 @@
           <vertex x="0" y="0" />
           <vertex x="0" y="-36" />
         </Wire>
-        <User classid="UserCmp" defn="master:hardlimit" id="1768078482" x="342" y="216" w="80" h="59" z="140" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" defn="master:hardlimit" id="1768078482" x="342" y="216" w="80" h="59" z="130" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="16843219">
             <param name="UL" value="2" />
             <param name="LL" value="-2" />
@@ -15586,7 +15766,7 @@
             </Curve>
           </Graph>
         </Frame>
-        <User classid="UserCmp" id="1277339489" name="master:pgb" x="1080" y="486" w="41" h="40" z="110" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
+        <User classid="UserCmp" id="1277339489" name="master:pgb" x="1080" y="486" w="41" h="40" z="100" orient="0" defn="master:pgb" link="-1" q="4" disable="false">
           <paramlist name="" link="-1" crc="55341900">
             <param name="Name" value="Pac" />
             <param name="Group" value="" />
@@ -15648,7 +15828,7 @@
           <vertex x="0" y="0" />
           <vertex x="72" y="0" />
         </Wire>
-        <User classid="UserCmp" name="master:select" defn="master:select" id="59864313" x="378" y="108" w="82" h="91" z="120" orient="0" link="-1" q="4" disable="false">
+        <User classid="UserCmp" name="master:select" defn="master:select" id="59864313" x="378" y="108" w="82" h="91" z="110" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="108938206">
             <param name="A" value="1" />
             <param name="DPath" value="1" />
@@ -15663,13 +15843,13 @@
         </Wire>
         <User classid="UserCmp" name="master:compare" id="394930307" x="306" y="144" w="80" h="59" z="40" orient="0" link="-1" defn="master:compare" q="4" disable="false">
           <paramlist link="-1" name="" crc="18432996">
-            <param name="X" value="3" />
+            <param name="X" value="2.5" />
             <param name="OL" value="0" />
             <param name="OH" value="1" />
             <param name="INTR" value="0" />
             <param name="Dim" value="1" />
             <param name="conv" value="1" />
-            <param name="Name" value="" />
+            <param name="Name" value="step_obj" />
           </paramlist>
         </User>
         <User classid="UserCmp" defn="master:const" id="1478519029" x="234" y="108" w="76" h="35" z="20" orient="0" link="-1" q="4" disable="false">
@@ -15686,7 +15866,7 @@
         <User classid="UserCmp" defn="master:const" id="1647677329" x="252" y="72" w="76" h="35" z="10" orient="0" link="-1" q="4" disable="false">
           <paramlist link="-1" name="" crc="10628662">
             <param name="Name" value="u_step" />
-            <param name="Value" value="652.8" />
+            <param name="Value" value="627.2" />
             <param name="Dim" value="1" />
           </paramlist>
         </User>
@@ -30037,345 +30217,6 @@
         </Gfx>
       </graphics>
     </Definition>
-    <Definition classid="UserCmpDefn" name="abc2AB_1" group="" url="" version="" build="" crc="89934450" instances="1" key="" view="false" date="0" id="271732572">
-      <paramlist>
-        <param name="Description" value="ABC to alpha-beta" />
-      </paramlist>
-      <form name="" w="320" h="400" splitter="60">
-        <category name="General" visible="true">
-          <cond />
-          <parameter desc="Delta / Wye Clark" name="Type" group="" type="Choice" helpmode="Append">
-            <value><![CDATA[2]]></value>
-            <cond />
-            <help />
-            <choice><![CDATA[1 = Delta]]></choice>
-            <choice><![CDATA[2 = Wye]]></choice>
-          </parameter>
-        </category>
-      </form>
-      <svg viewBox="-200 -200 200 200" size="2">
-        <paramlist>
-          <param name="show_grid" value="0" />
-          <param name="size" value="0" />
-          <param name="orient" value="1" />
-          <param name="show_border" value="0" />
-        </paramlist>
-        <port model="Transfer" name="IsA" x="-54" y="-18" dim="1" mode="Input" type="Real" internal="false"><![CDATA[true]]></port>
-        <port model="Transfer" name="IsB" x="-54" y="0" dim="1" mode="Input" type="Real" internal="false"><![CDATA[true]]></port>
-        <port model="Transfer" name="IsC" x="-54" y="18" dim="1" mode="Input" type="Real" internal="false"><![CDATA[true]]></port>
-        <port model="Transfer" name="I_A" x="54" y="-18" dim="1" mode="Output" type="Real" internal="false"><![CDATA[true]]></port>
-        <port model="Transfer" name="I_B" x="54" y="18" dim="1" mode="Output" type="Real" internal="false"><![CDATA[true]]></port>
-        <cond><![CDATA[true]]></cond>
-        <line x1="54" y1="-18" x2="36" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsA" />
-        <line x1="54" y1="18" x2="36" y2="18" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsC" />
-        <rect x="-29" y="-29" width="65" height="59" stroke="Teal" stroke-dasharray="none" stroke-width="0.6" fill-style="Solid" fill-fg="White" fill-bg="Transparent" port="" />
-        <line x1="-54" y1="-18" x2="-29" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsA" />
-        <line x1="-29" y1="-18" x2="-35" y2="-11" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsA" />
-        <line x1="-29" y1="-18" x2="-35" y2="-24" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsA" />
-        <line x1="-54" y1="0" x2="-29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsB" />
-        <line x1="-29" y1="0" x2="-35" y2="6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsB" />
-        <line x1="-29" y1="0" x2="-35" y2="-6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsB" />
-        <line x1="-54" y1="18" x2="-29" y2="18" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsC" />
-        <line x1="-29" y1="18" x2="-35" y2="24" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsC" />
-        <line x1="-29" y1="18" x2="-35" y2="11" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="IsC" />
-        <text x="-22" y="-14" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[a]]></text>
-        <text x="-21" y="4" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[b]]></text>
-        <text x="-21" y="22" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[c]]></text>
-        <text x="7" y="4" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Clarke]]></text>
-        <text x="29" y="-16" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[A]]></text>
-        <text x="28" y="21" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[B]]></text>
-      </svg>
-      <script>
-        <segment name="Dsdyn" id="1283579714" classid="CoreSegment"><![CDATA[!  ABC to alpha, beta Transform
-!
-      #IF Type==1
-      $I_A = TWO_3RD*($IsA - $IsB*0.5 - $IsC*0.5)
-      $I_B = ($IsB - $IsC)*SQRT_1BY3
-      #ELSE
-      $I_A = ($IsA - $IsC)*SQRT_1BY3
-      $I_B = TWO_3RD*(-$IsA*0.5 + $IsB - $IsC*0.5)
-      #ENDIF]]></segment>
-      </script>
-      <graphics size="4">
-        <paramlist>
-          <param name="lock_style" value="3" />
-          <param name="lock_cx" value="0" />
-          <param name="lock_cy" value="0" />
-        </paramlist>
-        <Port id="539849383" classid="Port" x="-54" y="-18">
-          <paramlist>
-            <param name="name" value="IsA" />
-            <param name="internal" value="false" />
-            <param name="cond" value="true" />
-            <param name="mode" value="1" />
-            <param name="datatype" value="3" />
-            <param name="electype" value="0" />
-            <param name="dim" value="1" />
-          </paramlist>
-        </Port>
-        <Port id="1228890161" classid="Port" x="-54" y="0">
-          <paramlist>
-            <param name="name" value="IsB" />
-            <param name="internal" value="false" />
-            <param name="cond" value="true" />
-            <param name="mode" value="1" />
-            <param name="datatype" value="3" />
-            <param name="electype" value="0" />
-            <param name="dim" value="1" />
-          </paramlist>
-        </Port>
-        <Port id="1997114932" classid="Port" x="-54" y="18">
-          <paramlist>
-            <param name="name" value="IsC" />
-            <param name="internal" value="false" />
-            <param name="cond" value="true" />
-            <param name="mode" value="1" />
-            <param name="datatype" value="3" />
-            <param name="electype" value="0" />
-            <param name="dim" value="1" />
-          </paramlist>
-        </Port>
-        <Port id="1483256478" classid="Port" x="54" y="-18">
-          <paramlist>
-            <param name="name" value="I_A" />
-            <param name="internal" value="false" />
-            <param name="cond" value="true" />
-            <param name="mode" value="2" />
-            <param name="datatype" value="3" />
-            <param name="electype" value="0" />
-            <param name="dim" value="1" />
-          </paramlist>
-        </Port>
-        <Port id="2133589961" classid="Port" x="54" y="18">
-          <paramlist>
-            <param name="name" value="I_B" />
-            <param name="internal" value="false" />
-            <param name="cond" value="true" />
-            <param name="mode" value="2" />
-            <param name="datatype" value="3" />
-            <param name="electype" value="0" />
-            <param name="dim" value="1" />
-          </paramlist>
-        </Port>
-        <Gfx classid="Graphics.Line" id="963352706" x="54" y="-18">
-          <vertex x="0" y="0" />
-          <vertex x="-18" y="0" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsA" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1895474761" x="54" y="18">
-          <vertex x="0" y="0" />
-          <vertex x="-18" y="0" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsC" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Rectangle" id="1832627302" x="-29" y="-29" w="65" h="59">
-          <paramlist>
-            <param name="color" value="Teal" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="2" />
-            <param name="port" value="" />
-            <param name="fill_style" value="1" />
-            <param name="fill_fg" value="White" />
-            <param name="fill_bg" value="Transparent" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="2023589318" x="-54" y="-18">
-          <vertex x="0" y="0" />
-          <vertex x="25" y="0" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsA" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="603256639" x="-29" y="-18">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="7" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsA" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="333233320" x="-29" y="-18">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="-6" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsA" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1913784214" x="-54" y="0">
-          <vertex x="0" y="0" />
-          <vertex x="25" y="0" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsB" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1863402076" x="-29" y="0">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="6" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsB" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="374815120" x="-29" y="0">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="-6" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsB" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1696959648" x="-54" y="18">
-          <vertex x="0" y="0" />
-          <vertex x="25" y="0" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsC" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1221933413" x="-29" y="18">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="6" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsC" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Line" id="1134698621" x="-29" y="18">
-          <vertex x="0" y="0" />
-          <vertex x="-6" y="-7" />
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="dasharray" value="0" />
-            <param name="thickness" value="7" />
-            <param name="port" value="IsC" />
-            <param name="cond" value="true" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="1657398091" x="-22" y="-14">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="a" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="1757593133" x="-21" y="4">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="b" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="632801218" x="-21" y="22">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="c" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="2060101745" x="7" y="4">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="Clarke" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="1368267544" x="29" y="-16">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="A" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-        <Gfx classid="Graphics.Text" id="1061362187" x="28" y="21">
-          <paramlist>
-            <param name="color" value="Black" />
-            <param name="font_size" value="0" />
-            <param name="full_font" value="Tahoma, 12world" />
-            <param name="anchor" value="1" />
-            <param name="cond" value="true" />
-            <param name="text" value="B" />
-            <param name="angle" value="0" />
-            <param name="lock" value="false" />
-          </paramlist>
-        </Gfx>
-      </graphics>
-    </Definition>
     <Definition classid="UserCmpDefn" name="Active_Power_Controller_30_1" group="" url="" version="" build="" crc="11589769" instances="0" key="" view="false" date="1783422402" id="1156659784">
       <paramlist name="">
         <param name="Description" value="" />
@@ -41774,31 +41615,13 @@ Output]]></segment>
     </Definition>
   </definitions>
   <List classid="Resource">
-    <Resource classid="ScriptResource" id="173051124" url=".\xxx.py">
-      <paramlist>
-        <param name="filepath" value=".\xxx.py" />
-        <param name="copy_file" value="false" />
-      </paramlist>
-    </Resource>
-    <Resource classid="ScriptResource" id="345127662" url=".\voltage_ref_step_response.py">
-      <paramlist>
-        <param name="filepath" value=".\voltage_ref_step_response.py" />
-        <param name="copy_file" value="false" />
-      </paramlist>
-    </Resource>
-    <Resource classid="ScriptResource" id="1112044822" url=".\xxx.py">
-      <paramlist>
-        <param name="filepath" value=".\xxx.py" />
-        <param name="copy_file" value="false" />
-      </paramlist>
-    </Resource>
   </List>
   <List classid="Template" />
   <hierarchy>
-    <call link="1035247552" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
+    <call link="307286184" name="MMC_step_voltage_reference:DS" z="-1" view="false" instance="0">
       <call link="866498961" name="MMC_step_voltage_reference:Main" z="-1" view="true" instance="0">
         <call link="13902648" name="MMC_step_voltage_reference:CONVERTER253" z="80" view="false" instance="0" />
-        <call link="171519397" name="MMC_step_voltage_reference:CONVERTER102_1" z="150" view="false" instance="0">
+        <call link="171519397" name="MMC_step_voltage_reference:CONVERTER102_1" z="140" view="false" instance="0">
           <call link="137886710" name="MMC_step_voltage_reference:DC_Voltage_Controller_32_1" z="230" view="false" instance="0">
             <call link="706785269" name="MMC_step_voltage_reference:PI_1" z="210" view="false" instance="0" />
             <call link="1225472770" name="MMC_step_voltage_reference:PI_2" z="270" view="false" instance="0" />

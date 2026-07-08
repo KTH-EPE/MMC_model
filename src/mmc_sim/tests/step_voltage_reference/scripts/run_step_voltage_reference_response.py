@@ -4,7 +4,7 @@ from svr_methods import single_run, parameter_sweep_run
 
 if __name__ == "__main__":
     """
-        Run this section of the code for a single set of RLC parameters. Update the RLC parameters and the `config.yaml` 
+        Run this section of the code for a single set of RLC parameters. Update the RLC parameters and the `config.yaml`
         file accordingly.
     """
     dc_grid_params = {"R": 7, "L": 0.4, "C": 800.}
@@ -15,8 +15,8 @@ if __name__ == "__main__":
         file accordingly.
     """
     dc_grid_param_list = {
-        "R": [6, 8, 10],
-        "L": [0.4, 0.5, 0.6],
-        "C": [800., 900., 1000.]
+        "R": list(range(6, 11)),
+        "L": [i * 1e-3 for i in range(400, 801, 100)],
+        "C": list(range(800, 2101, 100))
     }
     parameter_sweep_run(dc_grid_param_list)

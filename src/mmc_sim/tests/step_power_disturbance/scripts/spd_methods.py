@@ -39,7 +39,7 @@ def configure_ac_grid(project, component_id: str, scr: float, xr: float, mva: fl
     grid.parameters(Rg=rg, Lg=lg)
 
 
-def configure_power_references(components, initial_power, step_power):
+def configure_power_references(components, initial_power, step_power, step_time):
     for comp in components:
         try:
             name = comp.parameters().get("Name")
@@ -51,6 +51,8 @@ def configure_power_references(components, initial_power, step_power):
 
         elif name == "Pref_step":
             comp.parameters(Value=step_power)
+        elif name == "step_obj":
+            comp.parameters(X=step_time)
 
 
 def find_dc_components(components):
@@ -91,6 +93,10 @@ def load_configuration(config_file):
         "project_name": cfg.get(sim_cfg, "name"),
         "mva": cfg.get(sim_cfg, "mva"),
         "fn": cfg.get(sim_cfg, "fn"),
+        "step_time": cfg.get(sim_cfg, "step_time"),
+        "sample_step": cfg.get(sim_cfg, "sample_step"),
+        "time_step": cfg.get(sim_cfg, "time_step"),
+        "time_duration": cfg.get(sim_cfg, "time_duration"),
         "output_file": cfg.get(sim_cfg, "results", "file_name"),
         "save_path": Path(cfg.get(sim_cfg, "results", "save_path")),
         "result_file": Path(
@@ -118,6 +124,9 @@ def single_run(rlc_params: dict):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="0")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_ac_grid(
         project,
@@ -137,6 +146,7 @@ def single_run(rlc_params: dict):
         canvas_components,
         cfg["initial_power"],
         cfg["final_power"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)
@@ -162,6 +172,9 @@ def parameter_sweep_run(rlc_params: dict):
     project = model.get_project()
 
     project.component(cfg["mmc_id"]).parameters(idmode="0")
+    project.parameters(time_step=cfg["time_step"])
+    project.parameters(time_duration=cfg["time_duration"])
+    project.parameters(sample_step=cfg["sample_step"])
 
     configure_ac_grid(
         project,
@@ -181,6 +194,7 @@ def parameter_sweep_run(rlc_params: dict):
         canvas_components,
         cfg["initial_power"],
         cfg["final_power"],
+        cfg["step_time"]
     )
 
     dc_grid_components = find_dc_components(canvas_components)

@@ -14,8 +14,8 @@ if __name__ == "__main__":
         file accordingly.
     """
     rlc_param_list = {  # List of parameters for the RLC grid equivalent model
-        "R": [6, 8, 10],
-        "L": [0.4, 0.5, 0.6],
-        "C": [800., 900., 1000.],
+        "R": list(range(6, 11)),
+        "L": [i * 1e-3 for i in range(400, 801, 100)],
+        "C": list(range(800, 2101, 100))
     }
     parameter_sweep_run(rlc_param_list)  # Requires a list for parameter sweeps

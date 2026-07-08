@@ -4,14 +4,18 @@ power_dist_step:
   mva: 1200
   fn: 50
   ac_voltage: 400
-  initial_power: 600
-  final_power: 1000
+  initial_power: 700
+  final_power: 800
   SCR: 10
   XR: 10
+  step_time: 3.
+  time_duration: 5
+  sample_step: 100
+  time_step: 10
   components:
     mmc_id: 1155983973
     ac_grid_id: 609475367
   results:
     file_name: step_p_dist_response
     result_file: ../pscad_model/MMC_step_power_disturbance.gf46
-    save_path: ../output/simulation_results/step_power_disturbance_response
+    save_path: ../output/simulation_results/step_up_power_disturbance_response

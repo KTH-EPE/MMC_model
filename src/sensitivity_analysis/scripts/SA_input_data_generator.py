@@ -9,7 +9,7 @@ from sa_methods import *
 
 # Main execution
 def run_sampling(config_file=Path("SA_config.yaml"), samples=400):
-    cfg = load_config(config_file)
+    cfg = load_config_file(config_file)
     output_directory = Path(cfg["sensitivity_analysis"]["output"]["sample_data_dir"])
     dataframe = generate_samples(number_of_samples=samples, random_seed=13)
     save_samples(dataframe, output_directory)
