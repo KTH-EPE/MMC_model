@@ -93,7 +93,7 @@ MMC_Verification_Framework/
 - File: `run_step_voltage_disturbance_response.py`
 - Purpose: To assess the open-loop quasi-static behavior of active power response to changes in DC voltage
 - Control mode: Voltage droop control (`idmode = 2`)
-- In the `config.py` file, set `test: u_step_up` or `test: u_step_down`
+- In the `config.py` file, set voltage level after a step (`step_voltage`)
 ---
 
 ### 3.2 Step Power Disturbance Response
@@ -102,21 +102,18 @@ MMC_Verification_Framework/
   - To evaluate the closed-loop dynamics of the device under test (DUT) under various possible operational conditions. 
   - To assess whether the DUT possesses sufficient disturbance rejection capability to handle worst- case disturbances.
 - Model includes full RLC equivalent of DC grid
-- In the `config.py` file, set `test: p_step_up` or `test: p_step_down`
 ---
 
 ### 3.3 Step Voltage Reference Response
 - File: `run_step_voltage_reference_response.py`
 - Purpose: To ensure the capability of the AC/DC converter unit to adhere to the DC voltage set-point at its DC-PoC at steady state
 - Control mode: DC voltage control (`idmode = 0`)
-- In the `config.py` file, set `test: u_ref_step_up` or `test: u_ref_step_down`
 ---
 
 ### 3.4 Step Power Reference Response
 - File: `run_step_power_reference_response.py`
 - Purpose: Analyze active power tracking performance under reference changes
 - Control mode: Active power control (`idmode = 1`)
-- In the `config.py` file, set `test: p_ref_step_up` or `test: p_ref_step_down`
 ---
 
 ### 3.5 Sensitivity analysis
