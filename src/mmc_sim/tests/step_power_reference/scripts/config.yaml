@@ -14,7 +14,7 @@ step_power_ref:
   sample_step: 100
   time_step: 10
   components:
-    mmc_id: 1382517697
+    mmc_id: 432805499
     rate_limiter_id: 150450347
     ac_grid_id: 2126013019
   results:

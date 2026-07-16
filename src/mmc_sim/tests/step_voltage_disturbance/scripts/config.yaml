@@ -15,7 +15,7 @@ step_voltage_dist:
   sample_step: 100
   time_step: 10
   components:
-    mmc_id: 1004889451
+    mmc_id: 264348107
     ac_grid_id: 1350091687
   results:
     file_name: step_p_ref_response

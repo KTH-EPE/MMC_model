@@ -13,7 +13,7 @@ power_dist_step:
   sample_step: 100
   time_step: 10
   components:
-    mmc_id: 1155983973
+    mmc_id: 1163400029
     ac_grid_id: 609475367
   results:
     file_name: step_p_dist_response
