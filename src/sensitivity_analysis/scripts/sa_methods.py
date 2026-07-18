@@ -245,8 +245,9 @@ def sample_data_emt_run(sample_data_path: str, plot_results: bool = False):
         new_file_name = format_rlc_filename(**dc_grid_params, file_name=cfg["output_file"])
         move_result_file(result_df, cfg["save_path"] / "sim_timeseries", new_file_name)
         if cfg["u_step"] > cfg["uref"]:
-            result_summary = analyse_step_up_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
-                                                            step_time=cfg["step_time"], voltage_reference=cfg["uref"])
+            result_summary = analyse_step_up_voltage_signal_for_sa(cfg["save_path"] / "sim_timeseries" / new_file_name,
+                                                                   step_time=cfg["step_time"],
+                                                                   voltage_reference=cfg["uref"])
             file_path = cfg["save_path"] / "sim_summary" / new_file_name
             file_path.parent.mkdir(parents=True, exist_ok=True)
             result_summary.to_csv(file_path)
@@ -263,3 +264,90 @@ def sample_data_emt_run(sample_data_path: str, plot_results: bool = False):
                 plot_step_down_voltage_signal(cfg["save_path"] / "sim_timeseries" / new_file_name,
                                               step_time=cfg["step_time"], voltage_reference=cfg["uref"])
     return
+
+
+def analyse_step_up_voltage_signal_for_sa(
+        file_path,
+        step_time,
+        time_col="TIME",
+        signal_col="Vdc",
+        step_pu=0.02,
+        tol_factor=0.05,
+        voltage_reference=640.,
+        settling_window=200  # default window for smoothing
+):
+    """
+    Analyze a signal from a CSV file.
+    Settling time is calculated using a smoothed version of the signal.
+    The settling time is calculated with a smaller than specified in InterOPERA tolerance to improve accuracy of
+    sensitivity analysis.
+    """
+    # -----------------------------
+    # LOAD DATA
+    # -----------------------------
+    df = pd.read_csv(file_path)
+    steady_state_point = df.index.get_loc(df.index[df['TIME'] >= (step_time - 0.1)][0])
+    df = df.iloc[steady_state_point:, :]
+    df["R_ohms"] = float(str(file_path).split("\\")[-1].split("_")[-2][1:])  # Creating a column for the resistance.
+    df["H_mH"] = float(str(file_path).split("\\")[-1].split("_")[-4][1:])
+    df["C_uF"] = float(str(file_path).split("\\")[-1].split("_")[-3][1:])
+    t = df[time_col].values
+    y = df[signal_col].values
+
+    # -----------------------------
+    # TOLERANCE BAND
+    # -----------------------------
+    target = (1. + step_pu) * voltage_reference
+    band_percent = 0.02 * voltage_reference
+    tol = tol_factor * band_percent
+    lower = target - tol
+    upper = target + tol
+
+    # Boolean array for raw signal
+    within_band = (y >= lower) & (y <= upper)
+
+    # -----------------------------
+    # PEAK
+    # -----------------------------
+    peak_idx = np.argmax(y)
+    peak_value = y[peak_idx]
+    peak_time = t[peak_idx]
+
+    # -----------------------------
+    # FIRST ENTRY
+    # -----------------------------
+    first_entry_idx = None
+    for i in range(len(y)):
+        if within_band[i]:
+            first_entry_idx = i
+            break
+    first_entry_time = t[first_entry_idx] if first_entry_idx is not None else None
+
+    # -----------------------------
+    # SETTLING TIME USING SMOOTH SIGNAL
+    # -----------------------------
+    lower = target - tol * 0.5   # Reducing the tolerance improves the sensitivity analysis
+    upper = target + tol * 0.5
+    y_smooth = smooth_signal(y, window_size=settling_window)
+    within_band_smooth = (y_smooth >= lower) & (y_smooth <= upper)
+
+    settling_idx = None
+    for i in range(len(y_smooth)):
+        if within_band_smooth[i] and np.all(within_band_smooth[i:]):
+            settling_idx = i
+            break
+
+    settling_time = t[settling_idx] if settling_idx is not None else None
+
+    # -----------------------------
+    # RETURN RESULTS
+    # -----------------------------
+    result_df = df.iloc[-1:].copy()
+    result_df["Tcr"] = round(first_entry_time - step_time, 3)
+    result_df["Tcs"] = round(settling_time - step_time, 3)
+    result_df["Xm"] = round(peak_value - target, 2)
+    result_df["Vdc_ss"] = round(df[signal_col][-10:].mean(), 2)
+    result_df = result_df.drop(columns=["TIME", "Vdc"])
+    result_df.reset_index(drop=True, inplace=True)
+
+    return result_df

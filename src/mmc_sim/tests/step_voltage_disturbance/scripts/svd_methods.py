@@ -1,5 +1,4 @@
 import math
-import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Dict, List
@@ -58,7 +57,9 @@ def configure_power_and_voltage_values(components, initial_power, step_power, ur
             comp.parameters(Value=u_step)
         elif name == "uref":
             comp.parameters(Value=uref)
-        elif name == "step_obj":
+        elif name == "step_obj1":
+            comp.parameters(X=step_time)
+        elif name == "step_obj2":
             comp.parameters(X=step_time)
 
 
@@ -178,6 +179,7 @@ def single_run(rl_params: Dict[str, float], plot_results: bool = True):
         fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).stem + ".pdf")
         fig_path.parent.mkdir(parents=True, exist_ok=True)
         result_fig.savefig(fig_path)
+        plt.close(result_fig)
     return
 
 
@@ -243,6 +245,7 @@ def parameter_sweep_run(rl_params: Dict[str, List[float]], plot_results: bool = 
             fig_path = cfg["save_path"] / "sim_figures" / (Path(new_file_name).stem + ".pdf")
             fig_path.parent.mkdir(parents=True, exist_ok=True)
             result_fig.savefig(fig_path)
+            plt.close(result_fig)
     return
 
 
@@ -353,7 +356,7 @@ def plot_step_response(
     )
 
     ax.set_xlim(step_time - 0.2, step_time + 0.5)
-    ax.set_ylim(-2, signal.loc[mask].max() * 1.1)
+    ax.set_ylim(-2, abs(signal.loc[mask]).max() * 1.1)
 
     ax.set_xlabel("Time (s)")
     ax.set_ylabel("Pac (MW)")

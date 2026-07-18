@@ -186,7 +186,7 @@ def single_run(rlc_params: Dict[str, float], plot_results: bool = True):
     return
 
 
-def parameter_sweep_run(rlc_params: Dict[str, List[float]], plot_results: bool = True):
+def parameter_sweep_run(rlc_params: Dict[str, List[float]], plot_results: bool = False):
     cfg = load_configuration(CONFIG_FILE)
 
     model = PSCADModel(
@@ -486,6 +486,7 @@ def plot_step_up_voltage_signal(
     file_path = Path(f"{fig_path}\\{fig_name}.pdf")
     file_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(file_path)
+    plt.close()
 
 
 def analyse_step_down_voltage_signal(
@@ -683,3 +684,4 @@ def plot_step_down_voltage_signal(
     file_path = Path(f"{fig_path}\\{fig_name}.pdf")
     file_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(file_path)
+    plt.close()
