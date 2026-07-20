@@ -279,8 +279,8 @@ def analyse_step_up_voltage_signal_for_sa(
     """
     Analyze a signal from a CSV file.
     Settling time is calculated using a smoothed version of the signal.
-    The settling time is calculated with a smaller than specified in InterOPERA tolerance to improve accuracy of
-    sensitivity analysis.
+    The settling time is calculated with a smaller tolerance than specified in InterOPERA to improve accuracy of
+    sensitivity analysis for control settling time,
     """
     # -----------------------------
     # LOAD DATA

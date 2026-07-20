@@ -2,6 +2,8 @@
 Polynomial Chaos Expansion based sensitivity analysis.
 This analysis is implemented based on a pre-defined uncertainty parameter distribution based on the sample data problem.
 See `create_distribution()' in `sa_methods.py`. It should be updated to match the sample data problem.
+The EMT simulation summary, containing the KPIs should be concatenated into a single csv file whose location is included
+in the config file. The sensitivity of each KPI is evaluated separately, so update as required.
 """
 
 from sklearn.model_selection import train_test_split
@@ -19,7 +21,7 @@ def run_analysis(config_file):
     X = dataset[["L", "C", "R", "SCR", "XR"]].values
 
     # Output response
-    Y = dataset["Tcr"].values  # "Tcr", "Tcs", "Xm"
+    Y = dataset["Tcr"].values  # "Tcr", "Tcs", "Xm"  Each parameter is evaluated separately.
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=13)
     distribution = create_distribution()
     model = train_pce(X_train, Y_train, order=3, distribution=distribution)
